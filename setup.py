@@ -1,15 +1,9 @@
-# import os
 from setuptools import setup, find_packages
+from os import path
 
-# from os import path
-
-# from m2r import parse_from_file
-
-# import behave_restful.about as about
-
-# readme_file = path.join(path.dirname(path.abspath(__file__)), 'README.md')
-readme = "TEMP README"  # parse_from_file(readme_file)
-
+this_directory = path.abspath(path.dirname(__file__))
+with open(path.join(this_directory, 'README.md'), encoding='utf-8') as f:
+    long_description = f.read()
 
 def _read_dependencies():
     requirements_file = "requirements.txt"
@@ -27,4 +21,6 @@ setup(
     description="python protobuf types for posedetect",
     packages=packages,
     install_requires=requirements,
+    long_description=long_description,
+    long_description_content_type='text/markdown',
 )
