@@ -1,0 +1,41 @@
+// See README.txt for information and build instructions.
+//
+// Note: START and END tags are used in comments to define sections used in
+// tutorials.  They are not part of the syntax for Protocol Buffers.
+//
+// To get an in-depth walkthrough of this file and the related examples, see:
+// https://developers.google.com/protocol-buffers/docs/tutorials
+
+// [START declaration]
+syntax = "proto3";
+package poses;
+
+// [END declaration]
+
+// [START csharp_declaration]
+option csharp_namespace = "Polaris.Poses";
+// [END csharp_declaration]
+
+// [START messages]
+
+message KeypointEstimation {
+  float x = 101;
+  float y = 102;
+  float z = 103;
+  float p = 201;
+}
+
+message KeypointEstimationFrames {
+  string id = 101;
+  repeated KeypointEstimation frames = 201;
+}
+
+message PoseEstimationFrames {
+  repeated KeypointEstimationFrames keypoints = 201;
+}
+
+message PoseEstimationResult {
+  PoseEstimationFrames poseEstimations = 101;
+}
+
+// [END messages]
