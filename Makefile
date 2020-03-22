@@ -5,6 +5,16 @@ UID=$(shell id -u)
 GID=$(shell id -g)
 
 .PHONY: types-python
+types-csharp:
+	cd proto && \
+	docker run \
+			--rm \
+			-u $(UID):$(GID) \
+			-v $(DIR)/proto:/defs \
+			-v $(DIR)/posedetect_protobuf:/posedetect_protobuf \
+		$(DOCKER_PROTOC) -l csharp -f poses.proto -o /posedetect_protobuf
+
+.PHONY: types-python
 types-python:
 	cd proto && \
 	docker run \
