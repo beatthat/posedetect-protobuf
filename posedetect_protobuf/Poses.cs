@@ -9,7 +9,7 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace Polaris.Poses {
+namespace Polaris.Protobuf {
 
   /// <summary>Holder for reflection information generated from poses.proto</summary>
   public static partial class PosesReflection {
@@ -35,10 +35,10 @@ namespace Polaris.Poses {
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Polaris.Poses.KeypointEstimation), global::Polaris.Poses.KeypointEstimation.Parser, new[]{ "X", "Y", "Z", "P" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Polaris.Poses.KeypointEstimationFrames), global::Polaris.Poses.KeypointEstimationFrames.Parser, new[]{ "Id", "Frames" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Polaris.Poses.PoseEstimationFrames), global::Polaris.Poses.PoseEstimationFrames.Parser, new[]{ "Keypoints" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Polaris.Poses.PoseEstimationResult), global::Polaris.Poses.PoseEstimationResult.Parser, new[]{ "PoseEstimations" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Polaris.Protobuf.KeypointEstimation), global::Polaris.Protobuf.KeypointEstimation.Parser, new[]{ "X", "Y", "Z", "P" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Polaris.Protobuf.KeypointEstimationFrames), global::Polaris.Protobuf.KeypointEstimationFrames.Parser, new[]{ "Id", "Frames" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Polaris.Protobuf.PoseEstimationFrames), global::Polaris.Protobuf.PoseEstimationFrames.Parser, new[]{ "Keypoints" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Polaris.Protobuf.PoseEstimationResult), global::Polaris.Protobuf.PoseEstimationResult.Parser, new[]{ "PoseEstimations" }, null, null, null)
           }));
     }
     #endregion
@@ -53,7 +53,7 @@ namespace Polaris.Poses {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Polaris.Poses.PosesReflection.Descriptor.MessageTypes[0]; }
+      get { return global::Polaris.Protobuf.PosesReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -266,7 +266,7 @@ namespace Polaris.Poses {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Polaris.Poses.PosesReflection.Descriptor.MessageTypes[1]; }
+      get { return global::Polaris.Protobuf.PosesReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -306,11 +306,11 @@ namespace Polaris.Poses {
 
     /// <summary>Field number for the "frames" field.</summary>
     public const int FramesFieldNumber = 201;
-    private static readonly pb::FieldCodec<global::Polaris.Poses.KeypointEstimation> _repeated_frames_codec
-        = pb::FieldCodec.ForMessage(1610, global::Polaris.Poses.KeypointEstimation.Parser);
-    private readonly pbc::RepeatedField<global::Polaris.Poses.KeypointEstimation> frames_ = new pbc::RepeatedField<global::Polaris.Poses.KeypointEstimation>();
+    private static readonly pb::FieldCodec<global::Polaris.Protobuf.KeypointEstimation> _repeated_frames_codec
+        = pb::FieldCodec.ForMessage(1610, global::Polaris.Protobuf.KeypointEstimation.Parser);
+    private readonly pbc::RepeatedField<global::Polaris.Protobuf.KeypointEstimation> frames_ = new pbc::RepeatedField<global::Polaris.Protobuf.KeypointEstimation>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Polaris.Poses.KeypointEstimation> Frames {
+    public pbc::RepeatedField<global::Polaris.Protobuf.KeypointEstimation> Frames {
       get { return frames_; }
     }
 
@@ -415,7 +415,7 @@ namespace Polaris.Poses {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Polaris.Poses.PosesReflection.Descriptor.MessageTypes[2]; }
+      get { return global::Polaris.Protobuf.PosesReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -443,11 +443,11 @@ namespace Polaris.Poses {
 
     /// <summary>Field number for the "keypoints" field.</summary>
     public const int KeypointsFieldNumber = 201;
-    private static readonly pb::FieldCodec<global::Polaris.Poses.KeypointEstimationFrames> _repeated_keypoints_codec
-        = pb::FieldCodec.ForMessage(1610, global::Polaris.Poses.KeypointEstimationFrames.Parser);
-    private readonly pbc::RepeatedField<global::Polaris.Poses.KeypointEstimationFrames> keypoints_ = new pbc::RepeatedField<global::Polaris.Poses.KeypointEstimationFrames>();
+    private static readonly pb::FieldCodec<global::Polaris.Protobuf.KeypointEstimationFrames> _repeated_keypoints_codec
+        = pb::FieldCodec.ForMessage(1610, global::Polaris.Protobuf.KeypointEstimationFrames.Parser);
+    private readonly pbc::RepeatedField<global::Polaris.Protobuf.KeypointEstimationFrames> keypoints_ = new pbc::RepeatedField<global::Polaris.Protobuf.KeypointEstimationFrames>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Polaris.Poses.KeypointEstimationFrames> Keypoints {
+    public pbc::RepeatedField<global::Polaris.Protobuf.KeypointEstimationFrames> Keypoints {
       get { return keypoints_; }
     }
 
@@ -536,7 +536,7 @@ namespace Polaris.Poses {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Polaris.Poses.PosesReflection.Descriptor.MessageTypes[3]; }
+      get { return global::Polaris.Protobuf.PosesReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -564,9 +564,9 @@ namespace Polaris.Poses {
 
     /// <summary>Field number for the "poseEstimations" field.</summary>
     public const int PoseEstimationsFieldNumber = 101;
-    private global::Polaris.Poses.PoseEstimationFrames poseEstimations_;
+    private global::Polaris.Protobuf.PoseEstimationFrames poseEstimations_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Polaris.Poses.PoseEstimationFrames PoseEstimations {
+    public global::Polaris.Protobuf.PoseEstimationFrames PoseEstimations {
       get { return poseEstimations_; }
       set {
         poseEstimations_ = value;
@@ -635,7 +635,7 @@ namespace Polaris.Poses {
       }
       if (other.poseEstimations_ != null) {
         if (poseEstimations_ == null) {
-          PoseEstimations = new global::Polaris.Poses.PoseEstimationFrames();
+          PoseEstimations = new global::Polaris.Protobuf.PoseEstimationFrames();
         }
         PoseEstimations.MergeFrom(other.PoseEstimations);
       }
@@ -652,7 +652,7 @@ namespace Polaris.Poses {
             break;
           case 810: {
             if (poseEstimations_ == null) {
-              PoseEstimations = new global::Polaris.Poses.PoseEstimationFrames();
+              PoseEstimations = new global::Polaris.Protobuf.PoseEstimationFrames();
             }
             input.ReadMessage(PoseEstimations);
             break;

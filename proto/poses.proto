@@ -13,7 +13,7 @@ package poses;
 // [END declaration]
 
 // [START csharp_declaration]
-option csharp_namespace = "Polaris.Poses";
+option csharp_namespace = "Polaris.Protobuf";
 // [END csharp_declaration]
 
 // [START messages]

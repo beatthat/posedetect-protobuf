@@ -1,6 +1,6 @@
 PROJECT=$(shell git rev-parse --show-toplevel 2> /dev/null)
 DIR=$(shell pwd)
-DOCKER_PROTOC=namely/protoc-all:1.25_0
+DOCKER_PROTOC=namely/protoc-all:1.29_0
 UID=$(shell id -u)
 GID=$(shell id -g)
 
@@ -42,7 +42,7 @@ $(VENV):
 
 .PHONY: test-env-create
 test-env-create: virtualenv-installed
-	[ -d $(VENV) ] || virtualenv -p python3.7 $(VENV)
+	[ -d $(VENV) ] || virtualenv -p python3.8 $(VENV)
 	$(VENV)/bin/pip install --upgrade pip
 	$(VENV)/bin/pip install -r ./requirements.test.txt
 
