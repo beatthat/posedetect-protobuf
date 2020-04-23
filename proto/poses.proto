@@ -18,6 +18,19 @@ option csharp_namespace = "Polaris.Protobuf";
 
 // [START messages]
 
+message Vector3 {
+  float x = 1;
+  float y = 2;
+  float z = 3;
+}
+
+message Keyframe {
+  float time = 1;
+  float value = 2;
+  float inTangent = 3;
+  float outTangent = 4;
+}
+
 message KeypointEstimation {
   float x = 101;
   float y = 102;
@@ -38,4 +51,152 @@ message PoseEstimationResult {
   PoseEstimationFrames poseEstimations = 101;
 }
 
+message CategoryMoveDTO {
+  string _id = 1;
+	string category = 2;
+	string move = 3;
+	float score = 4;
+	int32 losses = 5;
+	int32 wins = 6;
+}
+
+message UserCoinsDTO {
+  string user = 1;
+	int32 coins = 2;
+}
+
+message UserCategoryContestListDTO {
+  string _id = 1;
+  string category = 2;
+  repeated string contests = 3;
+}
+
+message NextCategoryResponseDTO 
+{
+  UserCategoryContestListDTO contestList = 1;
+}
+
+message NextContestResponseDTO 
+{
+  bool noMoreContests = 1;
+  UserCategoryContestDTO userContest = 2;
+}
+
+message CategoryContestVoteResponseDTO
+{
+  UserCategoryContestDTO userContest = 1;
+  int32 coinsAfter = 2;
+  repeated CategoryMoveDTO globalScores = 3;
+}
+
+message CategoryContestDTO
+{
+  string category = 1;
+  string c1 = 2;
+  string c2 = 3;
+  int32  c1Votes = 4;
+  int32  c2Votes = 5;
+}
+	
+message UserCategoryContestDTO
+{
+  string _id = 1;
+  string user = 2;
+  repeated  CoinRewardDTO coinRewards = 3;
+  CategoryContestDTO contest = 4;
+  int32 vote = 5;
+}
+
+message CoinRewardDTO 
+{
+  int32 coins = 1;
+  int32 state = 2;
+}
+
+message MoveSetDTO
+{
+  string _id = 1;
+  string name = 2;
+  repeated MoveSetMoveDTO moves = 3;
+  float length = 4;
+}
+
+message MoveSetMoveDTO
+{
+  string move = 1;
+  MoveSetMoveTimingDTO timing =  2;
+}
+
+message MoveSetMoveTimingDTO
+{
+  float offset = 1;
+  float length = 2;
+  float blendIn = 3;
+  float blendOut = 4;
+}
+
+message MoveDTO
+{
+  repeated TransformCurvesDTO transformCurves = 1;
+  float length = 2;
+}
+
+message TransformCurvesDTO 
+{
+  string transformPath = 1;
+  Vector3CurvesDTO positionCurves = 2;
+  QuaternionCurvesDTO rotationCurves = 3;
+  
+}
+
+message Vector3CurvesDTO 
+{	
+  repeated Keyframe x = 1;
+  repeated Keyframe y = 2;
+  repeated Keyframe z = 3;
+}
+
+message QuaternionCurvesDTO 
+{	
+  repeated Keyframe x = 1;
+  repeated Keyframe y = 2;
+  repeated Keyframe z = 3;
+  repeated Keyframe w = 4;
+}
+
+message TransformPoseDTO
+{
+  string transformPath = 1;
+  Vector3 pos = 2;
+  Vector3 rot = 3;
+}
+
+message PoseDTO
+{
+  repeated TransformPoseDTO transforms = 1;
+}
+
+message AnimatablePoseDTO
+{
+  PoseDTO bones = 1;
+  PoseDTO controls = 2;
+}
+
+message EditorMovePoseDTO
+{
+  int32 frame = 1;
+  PoseDTO pose = 2;
+}
+
+message EditorMoveMetaDTO
+{
+  int32 framesPerSecond = 1;
+  int32 framesTotal = 2;
+}
+
+message EditorMoveDTO
+{
+  EditorMoveMetaDTO metadata = 1;
+  repeated EditorMovePoseDTO poses = 2;
+}
 // [END messages]
