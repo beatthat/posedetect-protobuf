@@ -31,14 +31,14 @@ namespace Polaris.Protobuf {
             "c3RpbWF0aW9uRnJhbWVzEjMKCWtleXBvaW50cxjJASADKAsyHy5wb3Nlcy5L",
             "ZXlwb2ludEVzdGltYXRpb25GcmFtZXMiTAoUUG9zZUVzdGltYXRpb25SZXN1",
             "bHQSNAoPcG9zZUVzdGltYXRpb25zGGUgASgLMhsucG9zZXMuUG9zZUVzdGlt",
-            "YXRpb25GcmFtZXNCEKoCDVBvbGFyaXMuUG9zZXNiBnByb3RvMw=="));
+            "YXRpb25GcmFtZXNCE6oCEFBvbGFyaXMuUHJvdG9idWZiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
-          new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Polaris.Protobuf.KeypointEstimation), global::Polaris.Protobuf.KeypointEstimation.Parser, new[]{ "X", "Y", "Z", "P" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Polaris.Protobuf.KeypointEstimationFrames), global::Polaris.Protobuf.KeypointEstimationFrames.Parser, new[]{ "Id", "Frames" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Polaris.Protobuf.PoseEstimationFrames), global::Polaris.Protobuf.PoseEstimationFrames.Parser, new[]{ "Keypoints" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Polaris.Protobuf.PoseEstimationResult), global::Polaris.Protobuf.PoseEstimationResult.Parser, new[]{ "PoseEstimations" }, null, null, null)
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::Polaris.Protobuf.KeypointEstimation), global::Polaris.Protobuf.KeypointEstimation.Parser, new[]{ "X", "Y", "Z", "P" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Polaris.Protobuf.KeypointEstimationFrames), global::Polaris.Protobuf.KeypointEstimationFrames.Parser, new[]{ "Id", "Frames" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Polaris.Protobuf.PoseEstimationFrames), global::Polaris.Protobuf.PoseEstimationFrames.Parser, new[]{ "Keypoints" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Polaris.Protobuf.PoseEstimationResult), global::Polaris.Protobuf.PoseEstimationResult.Parser, new[]{ "PoseEstimations" }, null, null, null, null)
           }));
     }
     #endregion
