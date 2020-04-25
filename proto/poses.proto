@@ -18,13 +18,13 @@ option csharp_namespace = "Polaris.Protobuf";
 
 // [START messages]
 
-message Vector3 {
+message Vector3DTO {
   float x = 1;
   float y = 2;
   float z = 3;
 }
 
-message Keyframe {
+message KeyframeDTO {
   float time = 1;
   float value = 2;
   float inTangent = 3;
@@ -151,24 +151,24 @@ message TransformCurvesDTO
 
 message Vector3CurvesDTO 
 {	
-  repeated Keyframe x = 1;
-  repeated Keyframe y = 2;
-  repeated Keyframe z = 3;
+  repeated KeyframeDTO x = 1;
+  repeated KeyframeDTO y = 2;
+  repeated KeyframeDTO z = 3;
 }
 
 message QuaternionCurvesDTO 
 {	
-  repeated Keyframe x = 1;
-  repeated Keyframe y = 2;
-  repeated Keyframe z = 3;
-  repeated Keyframe w = 4;
+  repeated KeyframeDTO x = 1;
+  repeated KeyframeDTO y = 2;
+  repeated KeyframeDTO z = 3;
+  repeated KeyframeDTO w = 4;
 }
 
 message TransformPoseDTO
 {
   string transformPath = 1;
-  Vector3 pos = 2;
-  Vector3 rot = 3;
+  Vector3DTO pos = 2;
+  Vector3DTO rot = 3;
 }
 
 message PoseDTO

@@ -24,68 +24,69 @@ namespace Polaris.Protobuf {
     static PosesReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Cgtwb3Nlcy5wcm90bxIFcG9zZXMiKgoHVmVjdG9yMxIJCgF4GAEgASgCEgkK",
-            "AXkYAiABKAISCQoBehgDIAEoAiJOCghLZXlmcmFtZRIMCgR0aW1lGAEgASgC",
-            "Eg0KBXZhbHVlGAIgASgCEhEKCWluVGFuZ2VudBgDIAEoAhISCgpvdXRUYW5n",
-            "ZW50GAQgASgCIkEKEktleXBvaW50RXN0aW1hdGlvbhIJCgF4GGUgASgCEgkK",
-            "AXkYZiABKAISCQoBehhnIAEoAhIKCgFwGMkBIAEoAiJSChhLZXlwb2ludEVz",
-            "dGltYXRpb25GcmFtZXMSCgoCaWQYZSABKAkSKgoGZnJhbWVzGMkBIAMoCzIZ",
-            "LnBvc2VzLktleXBvaW50RXN0aW1hdGlvbiJLChRQb3NlRXN0aW1hdGlvbkZy",
-            "YW1lcxIzCglrZXlwb2ludHMYyQEgAygLMh8ucG9zZXMuS2V5cG9pbnRFc3Rp",
-            "bWF0aW9uRnJhbWVzIkwKFFBvc2VFc3RpbWF0aW9uUmVzdWx0EjQKD3Bvc2VF",
-            "c3RpbWF0aW9ucxhlIAEoCzIbLnBvc2VzLlBvc2VFc3RpbWF0aW9uRnJhbWVz",
-            "ImsKD0NhdGVnb3J5TW92ZURUTxILCgNfaWQYASABKAkSEAoIY2F0ZWdvcnkY",
-            "AiABKAkSDAoEbW92ZRgDIAEoCRINCgVzY29yZRgEIAEoAhIOCgZsb3NzZXMY",
-            "BSABKAUSDAoEd2lucxgGIAEoBSIrCgxVc2VyQ29pbnNEVE8SDAoEdXNlchgB",
-            "IAEoCRINCgVjb2lucxgCIAEoBSJNChpVc2VyQ2F0ZWdvcnlDb250ZXN0TGlz",
-            "dERUTxILCgNfaWQYASABKAkSEAoIY2F0ZWdvcnkYAiABKAkSEAoIY29udGVz",
-            "dHMYAyADKAkiUQoXTmV4dENhdGVnb3J5UmVzcG9uc2VEVE8SNgoLY29udGVz",
-            "dExpc3QYASABKAsyIS5wb3Nlcy5Vc2VyQ2F0ZWdvcnlDb250ZXN0TGlzdERU",
-            "TyJkChZOZXh0Q29udGVzdFJlc3BvbnNlRFRPEhYKDm5vTW9yZUNvbnRlc3Rz",
-            "GAEgASgIEjIKC3VzZXJDb250ZXN0GAIgASgLMh0ucG9zZXMuVXNlckNhdGVn",
-            "b3J5Q29udGVzdERUTyKWAQoeQ2F0ZWdvcnlDb250ZXN0Vm90ZVJlc3BvbnNl",
-            "RFRPEjIKC3VzZXJDb250ZXN0GAEgASgLMh0ucG9zZXMuVXNlckNhdGVnb3J5",
-            "Q29udGVzdERUTxISCgpjb2luc0FmdGVyGAIgASgFEiwKDGdsb2JhbFNjb3Jl",
-            "cxgDIAMoCzIWLnBvc2VzLkNhdGVnb3J5TW92ZURUTyJgChJDYXRlZ29yeUNv",
-            "bnRlc3REVE8SEAoIY2F0ZWdvcnkYASABKAkSCgoCYzEYAiABKAkSCgoCYzIY",
-            "AyABKAkSDwoHYzFWb3RlcxgEIAEoBRIPCgdjMlZvdGVzGAUgASgFIpgBChZV",
-            "c2VyQ2F0ZWdvcnlDb250ZXN0RFRPEgsKA19pZBgBIAEoCRIMCgR1c2VyGAIg",
-            "ASgJEikKC2NvaW5SZXdhcmRzGAMgAygLMhQucG9zZXMuQ29pblJld2FyZERU",
-            "TxIqCgdjb250ZXN0GAQgASgLMhkucG9zZXMuQ2F0ZWdvcnlDb250ZXN0RFRP",
-            "EgwKBHZvdGUYBSABKAUiLQoNQ29pblJld2FyZERUTxINCgVjb2lucxgBIAEo",
-            "BRINCgVzdGF0ZRgCIAEoBSJdCgpNb3ZlU2V0RFRPEgsKA19pZBgBIAEoCRIM",
-            "CgRuYW1lGAIgASgJEiQKBW1vdmVzGAMgAygLMhUucG9zZXMuTW92ZVNldE1v",
-            "dmVEVE8SDgoGbGVuZ3RoGAQgASgCIksKDk1vdmVTZXRNb3ZlRFRPEgwKBG1v",
-            "dmUYASABKAkSKwoGdGltaW5nGAIgASgLMhsucG9zZXMuTW92ZVNldE1vdmVU",
-            "aW1pbmdEVE8iWQoUTW92ZVNldE1vdmVUaW1pbmdEVE8SDgoGb2Zmc2V0GAEg",
-            "ASgCEg4KBmxlbmd0aBgCIAEoAhIPCgdibGVuZEluGAMgASgCEhAKCGJsZW5k",
-            "T3V0GAQgASgCIk0KB01vdmVEVE8SMgoPdHJhbnNmb3JtQ3VydmVzGAEgAygL",
-            "MhkucG9zZXMuVHJhbnNmb3JtQ3VydmVzRFRPEg4KBmxlbmd0aBgCIAEoAiKQ",
-            "AQoSVHJhbnNmb3JtQ3VydmVzRFRPEhUKDXRyYW5zZm9ybVBhdGgYASABKAkS",
-            "LwoOcG9zaXRpb25DdXJ2ZXMYAiABKAsyFy5wb3Nlcy5WZWN0b3IzQ3VydmVz",
-            "RFRPEjIKDnJvdGF0aW9uQ3VydmVzGAMgASgLMhoucG9zZXMuUXVhdGVybmlv",
-            "bkN1cnZlc0RUTyJmChBWZWN0b3IzQ3VydmVzRFRPEhoKAXgYASADKAsyDy5w",
-            "b3Nlcy5LZXlmcmFtZRIaCgF5GAIgAygLMg8ucG9zZXMuS2V5ZnJhbWUSGgoB",
-            "ehgDIAMoCzIPLnBvc2VzLktleWZyYW1lIoUBChNRdWF0ZXJuaW9uQ3VydmVz",
-            "RFRPEhoKAXgYASADKAsyDy5wb3Nlcy5LZXlmcmFtZRIaCgF5GAIgAygLMg8u",
-            "cG9zZXMuS2V5ZnJhbWUSGgoBehgDIAMoCzIPLnBvc2VzLktleWZyYW1lEhoK",
-            "AXcYBCADKAsyDy5wb3Nlcy5LZXlmcmFtZSJjChBUcmFuc2Zvcm1Qb3NlRFRP",
-            "EhUKDXRyYW5zZm9ybVBhdGgYASABKAkSGwoDcG9zGAIgASgLMg4ucG9zZXMu",
-            "VmVjdG9yMxIbCgNyb3QYAyABKAsyDi5wb3Nlcy5WZWN0b3IzIjYKB1Bvc2VE",
-            "VE8SKwoKdHJhbnNmb3JtcxgBIAMoCzIXLnBvc2VzLlRyYW5zZm9ybVBvc2VE",
-            "VE8iVAoRQW5pbWF0YWJsZVBvc2VEVE8SHQoFYm9uZXMYASABKAsyDi5wb3Nl",
-            "cy5Qb3NlRFRPEiAKCGNvbnRyb2xzGAIgASgLMg4ucG9zZXMuUG9zZURUTyJA",
-            "ChFFZGl0b3JNb3ZlUG9zZURUTxINCgVmcmFtZRgBIAEoBRIcCgRwb3NlGAIg",
-            "ASgLMg4ucG9zZXMuUG9zZURUTyJBChFFZGl0b3JNb3ZlTWV0YURUTxIXCg9m",
-            "cmFtZXNQZXJTZWNvbmQYASABKAUSEwoLZnJhbWVzVG90YWwYAiABKAUiZAoN",
-            "RWRpdG9yTW92ZURUTxIqCghtZXRhZGF0YRgBIAEoCzIYLnBvc2VzLkVkaXRv",
-            "ck1vdmVNZXRhRFRPEicKBXBvc2VzGAIgAygLMhgucG9zZXMuRWRpdG9yTW92",
-            "ZVBvc2VEVE9CE6oCEFBvbGFyaXMuUHJvdG9idWZiBnByb3RvMw=="));
+            "Cgtwb3Nlcy5wcm90bxIFcG9zZXMiLQoKVmVjdG9yM0RUTxIJCgF4GAEgASgC",
+            "EgkKAXkYAiABKAISCQoBehgDIAEoAiJRCgtLZXlmcmFtZURUTxIMCgR0aW1l",
+            "GAEgASgCEg0KBXZhbHVlGAIgASgCEhEKCWluVGFuZ2VudBgDIAEoAhISCgpv",
+            "dXRUYW5nZW50GAQgASgCIkEKEktleXBvaW50RXN0aW1hdGlvbhIJCgF4GGUg",
+            "ASgCEgkKAXkYZiABKAISCQoBehhnIAEoAhIKCgFwGMkBIAEoAiJSChhLZXlw",
+            "b2ludEVzdGltYXRpb25GcmFtZXMSCgoCaWQYZSABKAkSKgoGZnJhbWVzGMkB",
+            "IAMoCzIZLnBvc2VzLktleXBvaW50RXN0aW1hdGlvbiJLChRQb3NlRXN0aW1h",
+            "dGlvbkZyYW1lcxIzCglrZXlwb2ludHMYyQEgAygLMh8ucG9zZXMuS2V5cG9p",
+            "bnRFc3RpbWF0aW9uRnJhbWVzIkwKFFBvc2VFc3RpbWF0aW9uUmVzdWx0EjQK",
+            "D3Bvc2VFc3RpbWF0aW9ucxhlIAEoCzIbLnBvc2VzLlBvc2VFc3RpbWF0aW9u",
+            "RnJhbWVzImsKD0NhdGVnb3J5TW92ZURUTxILCgNfaWQYASABKAkSEAoIY2F0",
+            "ZWdvcnkYAiABKAkSDAoEbW92ZRgDIAEoCRINCgVzY29yZRgEIAEoAhIOCgZs",
+            "b3NzZXMYBSABKAUSDAoEd2lucxgGIAEoBSIrCgxVc2VyQ29pbnNEVE8SDAoE",
+            "dXNlchgBIAEoCRINCgVjb2lucxgCIAEoBSJNChpVc2VyQ2F0ZWdvcnlDb250",
+            "ZXN0TGlzdERUTxILCgNfaWQYASABKAkSEAoIY2F0ZWdvcnkYAiABKAkSEAoI",
+            "Y29udGVzdHMYAyADKAkiUQoXTmV4dENhdGVnb3J5UmVzcG9uc2VEVE8SNgoL",
+            "Y29udGVzdExpc3QYASABKAsyIS5wb3Nlcy5Vc2VyQ2F0ZWdvcnlDb250ZXN0",
+            "TGlzdERUTyJkChZOZXh0Q29udGVzdFJlc3BvbnNlRFRPEhYKDm5vTW9yZUNv",
+            "bnRlc3RzGAEgASgIEjIKC3VzZXJDb250ZXN0GAIgASgLMh0ucG9zZXMuVXNl",
+            "ckNhdGVnb3J5Q29udGVzdERUTyKWAQoeQ2F0ZWdvcnlDb250ZXN0Vm90ZVJl",
+            "c3BvbnNlRFRPEjIKC3VzZXJDb250ZXN0GAEgASgLMh0ucG9zZXMuVXNlckNh",
+            "dGVnb3J5Q29udGVzdERUTxISCgpjb2luc0FmdGVyGAIgASgFEiwKDGdsb2Jh",
+            "bFNjb3JlcxgDIAMoCzIWLnBvc2VzLkNhdGVnb3J5TW92ZURUTyJgChJDYXRl",
+            "Z29yeUNvbnRlc3REVE8SEAoIY2F0ZWdvcnkYASABKAkSCgoCYzEYAiABKAkS",
+            "CgoCYzIYAyABKAkSDwoHYzFWb3RlcxgEIAEoBRIPCgdjMlZvdGVzGAUgASgF",
+            "IpgBChZVc2VyQ2F0ZWdvcnlDb250ZXN0RFRPEgsKA19pZBgBIAEoCRIMCgR1",
+            "c2VyGAIgASgJEikKC2NvaW5SZXdhcmRzGAMgAygLMhQucG9zZXMuQ29pblJl",
+            "d2FyZERUTxIqCgdjb250ZXN0GAQgASgLMhkucG9zZXMuQ2F0ZWdvcnlDb250",
+            "ZXN0RFRPEgwKBHZvdGUYBSABKAUiLQoNQ29pblJld2FyZERUTxINCgVjb2lu",
+            "cxgBIAEoBRINCgVzdGF0ZRgCIAEoBSJdCgpNb3ZlU2V0RFRPEgsKA19pZBgB",
+            "IAEoCRIMCgRuYW1lGAIgASgJEiQKBW1vdmVzGAMgAygLMhUucG9zZXMuTW92",
+            "ZVNldE1vdmVEVE8SDgoGbGVuZ3RoGAQgASgCIksKDk1vdmVTZXRNb3ZlRFRP",
+            "EgwKBG1vdmUYASABKAkSKwoGdGltaW5nGAIgASgLMhsucG9zZXMuTW92ZVNl",
+            "dE1vdmVUaW1pbmdEVE8iWQoUTW92ZVNldE1vdmVUaW1pbmdEVE8SDgoGb2Zm",
+            "c2V0GAEgASgCEg4KBmxlbmd0aBgCIAEoAhIPCgdibGVuZEluGAMgASgCEhAK",
+            "CGJsZW5kT3V0GAQgASgCIk0KB01vdmVEVE8SMgoPdHJhbnNmb3JtQ3VydmVz",
+            "GAEgAygLMhkucG9zZXMuVHJhbnNmb3JtQ3VydmVzRFRPEg4KBmxlbmd0aBgC",
+            "IAEoAiKQAQoSVHJhbnNmb3JtQ3VydmVzRFRPEhUKDXRyYW5zZm9ybVBhdGgY",
+            "ASABKAkSLwoOcG9zaXRpb25DdXJ2ZXMYAiABKAsyFy5wb3Nlcy5WZWN0b3Iz",
+            "Q3VydmVzRFRPEjIKDnJvdGF0aW9uQ3VydmVzGAMgASgLMhoucG9zZXMuUXVh",
+            "dGVybmlvbkN1cnZlc0RUTyJvChBWZWN0b3IzQ3VydmVzRFRPEh0KAXgYASAD",
+            "KAsyEi5wb3Nlcy5LZXlmcmFtZURUTxIdCgF5GAIgAygLMhIucG9zZXMuS2V5",
+            "ZnJhbWVEVE8SHQoBehgDIAMoCzISLnBvc2VzLktleWZyYW1lRFRPIpEBChNR",
+            "dWF0ZXJuaW9uQ3VydmVzRFRPEh0KAXgYASADKAsyEi5wb3Nlcy5LZXlmcmFt",
+            "ZURUTxIdCgF5GAIgAygLMhIucG9zZXMuS2V5ZnJhbWVEVE8SHQoBehgDIAMo",
+            "CzISLnBvc2VzLktleWZyYW1lRFRPEh0KAXcYBCADKAsyEi5wb3Nlcy5LZXlm",
+            "cmFtZURUTyJpChBUcmFuc2Zvcm1Qb3NlRFRPEhUKDXRyYW5zZm9ybVBhdGgY",
+            "ASABKAkSHgoDcG9zGAIgASgLMhEucG9zZXMuVmVjdG9yM0RUTxIeCgNyb3QY",
+            "AyABKAsyES5wb3Nlcy5WZWN0b3IzRFRPIjYKB1Bvc2VEVE8SKwoKdHJhbnNm",
+            "b3JtcxgBIAMoCzIXLnBvc2VzLlRyYW5zZm9ybVBvc2VEVE8iVAoRQW5pbWF0",
+            "YWJsZVBvc2VEVE8SHQoFYm9uZXMYASABKAsyDi5wb3Nlcy5Qb3NlRFRPEiAK",
+            "CGNvbnRyb2xzGAIgASgLMg4ucG9zZXMuUG9zZURUTyJAChFFZGl0b3JNb3Zl",
+            "UG9zZURUTxINCgVmcmFtZRgBIAEoBRIcCgRwb3NlGAIgASgLMg4ucG9zZXMu",
+            "UG9zZURUTyJBChFFZGl0b3JNb3ZlTWV0YURUTxIXCg9mcmFtZXNQZXJTZWNv",
+            "bmQYASABKAUSEwoLZnJhbWVzVG90YWwYAiABKAUiZAoNRWRpdG9yTW92ZURU",
+            "TxIqCghtZXRhZGF0YRgBIAEoCzIYLnBvc2VzLkVkaXRvck1vdmVNZXRhRFRP",
+            "EicKBXBvc2VzGAIgAygLMhgucG9zZXMuRWRpdG9yTW92ZVBvc2VEVE9CE6oC",
+            "EFBvbGFyaXMuUHJvdG9idWZiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Polaris.Protobuf.Vector3), global::Polaris.Protobuf.Vector3.Parser, new[]{ "X", "Y", "Z" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Polaris.Protobuf.Keyframe), global::Polaris.Protobuf.Keyframe.Parser, new[]{ "Time", "Value", "InTangent", "OutTangent" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Polaris.Protobuf.Vector3DTO), global::Polaris.Protobuf.Vector3DTO.Parser, new[]{ "X", "Y", "Z" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Polaris.Protobuf.KeyframeDTO), global::Polaris.Protobuf.KeyframeDTO.Parser, new[]{ "Time", "Value", "InTangent", "OutTangent" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Polaris.Protobuf.KeypointEstimation), global::Polaris.Protobuf.KeypointEstimation.Parser, new[]{ "X", "Y", "Z", "P" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Polaris.Protobuf.KeypointEstimationFrames), global::Polaris.Protobuf.KeypointEstimationFrames.Parser, new[]{ "Id", "Frames" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Polaris.Protobuf.PoseEstimationFrames), global::Polaris.Protobuf.PoseEstimationFrames.Parser, new[]{ "Keypoints" }, null, null, null, null),
@@ -118,11 +119,11 @@ namespace Polaris.Protobuf {
 
   }
   #region Messages
-  public sealed partial class Vector3 : pb::IMessage<Vector3> {
-    private static readonly pb::MessageParser<Vector3> _parser = new pb::MessageParser<Vector3>(() => new Vector3());
+  public sealed partial class Vector3DTO : pb::IMessage<Vector3DTO> {
+    private static readonly pb::MessageParser<Vector3DTO> _parser = new pb::MessageParser<Vector3DTO>(() => new Vector3DTO());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<Vector3> Parser { get { return _parser; } }
+    public static pb::MessageParser<Vector3DTO> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
@@ -135,14 +136,14 @@ namespace Polaris.Protobuf {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Vector3() {
+    public Vector3DTO() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Vector3(Vector3 other) : this() {
+    public Vector3DTO(Vector3DTO other) : this() {
       x_ = other.x_;
       y_ = other.y_;
       z_ = other.z_;
@@ -150,8 +151,8 @@ namespace Polaris.Protobuf {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Vector3 Clone() {
-      return new Vector3(this);
+    public Vector3DTO Clone() {
+      return new Vector3DTO(this);
     }
 
     /// <summary>Field number for the "x" field.</summary>
@@ -189,11 +190,11 @@ namespace Polaris.Protobuf {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as Vector3);
+      return Equals(other as Vector3DTO);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(Vector3 other) {
+    public bool Equals(Vector3DTO other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -261,7 +262,7 @@ namespace Polaris.Protobuf {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(Vector3 other) {
+    public void MergeFrom(Vector3DTO other) {
       if (other == null) {
         return;
       }
@@ -303,11 +304,11 @@ namespace Polaris.Protobuf {
 
   }
 
-  public sealed partial class Keyframe : pb::IMessage<Keyframe> {
-    private static readonly pb::MessageParser<Keyframe> _parser = new pb::MessageParser<Keyframe>(() => new Keyframe());
+  public sealed partial class KeyframeDTO : pb::IMessage<KeyframeDTO> {
+    private static readonly pb::MessageParser<KeyframeDTO> _parser = new pb::MessageParser<KeyframeDTO>(() => new KeyframeDTO());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<Keyframe> Parser { get { return _parser; } }
+    public static pb::MessageParser<KeyframeDTO> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
@@ -320,14 +321,14 @@ namespace Polaris.Protobuf {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Keyframe() {
+    public KeyframeDTO() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Keyframe(Keyframe other) : this() {
+    public KeyframeDTO(KeyframeDTO other) : this() {
       time_ = other.time_;
       value_ = other.value_;
       inTangent_ = other.inTangent_;
@@ -336,8 +337,8 @@ namespace Polaris.Protobuf {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Keyframe Clone() {
-      return new Keyframe(this);
+    public KeyframeDTO Clone() {
+      return new KeyframeDTO(this);
     }
 
     /// <summary>Field number for the "time" field.</summary>
@@ -386,11 +387,11 @@ namespace Polaris.Protobuf {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as Keyframe);
+      return Equals(other as KeyframeDTO);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(Keyframe other) {
+    public bool Equals(KeyframeDTO other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -467,7 +468,7 @@ namespace Polaris.Protobuf {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(Keyframe other) {
+    public void MergeFrom(KeyframeDTO other) {
       if (other == null) {
         return;
       }
@@ -3820,31 +3821,31 @@ namespace Polaris.Protobuf {
 
     /// <summary>Field number for the "x" field.</summary>
     public const int XFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::Polaris.Protobuf.Keyframe> _repeated_x_codec
-        = pb::FieldCodec.ForMessage(10, global::Polaris.Protobuf.Keyframe.Parser);
-    private readonly pbc::RepeatedField<global::Polaris.Protobuf.Keyframe> x_ = new pbc::RepeatedField<global::Polaris.Protobuf.Keyframe>();
+    private static readonly pb::FieldCodec<global::Polaris.Protobuf.KeyframeDTO> _repeated_x_codec
+        = pb::FieldCodec.ForMessage(10, global::Polaris.Protobuf.KeyframeDTO.Parser);
+    private readonly pbc::RepeatedField<global::Polaris.Protobuf.KeyframeDTO> x_ = new pbc::RepeatedField<global::Polaris.Protobuf.KeyframeDTO>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Polaris.Protobuf.Keyframe> X {
+    public pbc::RepeatedField<global::Polaris.Protobuf.KeyframeDTO> X {
       get { return x_; }
     }
 
     /// <summary>Field number for the "y" field.</summary>
     public const int YFieldNumber = 2;
-    private static readonly pb::FieldCodec<global::Polaris.Protobuf.Keyframe> _repeated_y_codec
-        = pb::FieldCodec.ForMessage(18, global::Polaris.Protobuf.Keyframe.Parser);
-    private readonly pbc::RepeatedField<global::Polaris.Protobuf.Keyframe> y_ = new pbc::RepeatedField<global::Polaris.Protobuf.Keyframe>();
+    private static readonly pb::FieldCodec<global::Polaris.Protobuf.KeyframeDTO> _repeated_y_codec
+        = pb::FieldCodec.ForMessage(18, global::Polaris.Protobuf.KeyframeDTO.Parser);
+    private readonly pbc::RepeatedField<global::Polaris.Protobuf.KeyframeDTO> y_ = new pbc::RepeatedField<global::Polaris.Protobuf.KeyframeDTO>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Polaris.Protobuf.Keyframe> Y {
+    public pbc::RepeatedField<global::Polaris.Protobuf.KeyframeDTO> Y {
       get { return y_; }
     }
 
     /// <summary>Field number for the "z" field.</summary>
     public const int ZFieldNumber = 3;
-    private static readonly pb::FieldCodec<global::Polaris.Protobuf.Keyframe> _repeated_z_codec
-        = pb::FieldCodec.ForMessage(26, global::Polaris.Protobuf.Keyframe.Parser);
-    private readonly pbc::RepeatedField<global::Polaris.Protobuf.Keyframe> z_ = new pbc::RepeatedField<global::Polaris.Protobuf.Keyframe>();
+    private static readonly pb::FieldCodec<global::Polaris.Protobuf.KeyframeDTO> _repeated_z_codec
+        = pb::FieldCodec.ForMessage(26, global::Polaris.Protobuf.KeyframeDTO.Parser);
+    private readonly pbc::RepeatedField<global::Polaris.Protobuf.KeyframeDTO> z_ = new pbc::RepeatedField<global::Polaris.Protobuf.KeyframeDTO>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Polaris.Protobuf.Keyframe> Z {
+    public pbc::RepeatedField<global::Polaris.Protobuf.KeyframeDTO> Z {
       get { return z_; }
     }
 
@@ -3982,41 +3983,41 @@ namespace Polaris.Protobuf {
 
     /// <summary>Field number for the "x" field.</summary>
     public const int XFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::Polaris.Protobuf.Keyframe> _repeated_x_codec
-        = pb::FieldCodec.ForMessage(10, global::Polaris.Protobuf.Keyframe.Parser);
-    private readonly pbc::RepeatedField<global::Polaris.Protobuf.Keyframe> x_ = new pbc::RepeatedField<global::Polaris.Protobuf.Keyframe>();
+    private static readonly pb::FieldCodec<global::Polaris.Protobuf.KeyframeDTO> _repeated_x_codec
+        = pb::FieldCodec.ForMessage(10, global::Polaris.Protobuf.KeyframeDTO.Parser);
+    private readonly pbc::RepeatedField<global::Polaris.Protobuf.KeyframeDTO> x_ = new pbc::RepeatedField<global::Polaris.Protobuf.KeyframeDTO>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Polaris.Protobuf.Keyframe> X {
+    public pbc::RepeatedField<global::Polaris.Protobuf.KeyframeDTO> X {
       get { return x_; }
     }
 
     /// <summary>Field number for the "y" field.</summary>
     public const int YFieldNumber = 2;
-    private static readonly pb::FieldCodec<global::Polaris.Protobuf.Keyframe> _repeated_y_codec
-        = pb::FieldCodec.ForMessage(18, global::Polaris.Protobuf.Keyframe.Parser);
-    private readonly pbc::RepeatedField<global::Polaris.Protobuf.Keyframe> y_ = new pbc::RepeatedField<global::Polaris.Protobuf.Keyframe>();
+    private static readonly pb::FieldCodec<global::Polaris.Protobuf.KeyframeDTO> _repeated_y_codec
+        = pb::FieldCodec.ForMessage(18, global::Polaris.Protobuf.KeyframeDTO.Parser);
+    private readonly pbc::RepeatedField<global::Polaris.Protobuf.KeyframeDTO> y_ = new pbc::RepeatedField<global::Polaris.Protobuf.KeyframeDTO>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Polaris.Protobuf.Keyframe> Y {
+    public pbc::RepeatedField<global::Polaris.Protobuf.KeyframeDTO> Y {
       get { return y_; }
     }
 
     /// <summary>Field number for the "z" field.</summary>
     public const int ZFieldNumber = 3;
-    private static readonly pb::FieldCodec<global::Polaris.Protobuf.Keyframe> _repeated_z_codec
-        = pb::FieldCodec.ForMessage(26, global::Polaris.Protobuf.Keyframe.Parser);
-    private readonly pbc::RepeatedField<global::Polaris.Protobuf.Keyframe> z_ = new pbc::RepeatedField<global::Polaris.Protobuf.Keyframe>();
+    private static readonly pb::FieldCodec<global::Polaris.Protobuf.KeyframeDTO> _repeated_z_codec
+        = pb::FieldCodec.ForMessage(26, global::Polaris.Protobuf.KeyframeDTO.Parser);
+    private readonly pbc::RepeatedField<global::Polaris.Protobuf.KeyframeDTO> z_ = new pbc::RepeatedField<global::Polaris.Protobuf.KeyframeDTO>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Polaris.Protobuf.Keyframe> Z {
+    public pbc::RepeatedField<global::Polaris.Protobuf.KeyframeDTO> Z {
       get { return z_; }
     }
 
     /// <summary>Field number for the "w" field.</summary>
     public const int WFieldNumber = 4;
-    private static readonly pb::FieldCodec<global::Polaris.Protobuf.Keyframe> _repeated_w_codec
-        = pb::FieldCodec.ForMessage(34, global::Polaris.Protobuf.Keyframe.Parser);
-    private readonly pbc::RepeatedField<global::Polaris.Protobuf.Keyframe> w_ = new pbc::RepeatedField<global::Polaris.Protobuf.Keyframe>();
+    private static readonly pb::FieldCodec<global::Polaris.Protobuf.KeyframeDTO> _repeated_w_codec
+        = pb::FieldCodec.ForMessage(34, global::Polaris.Protobuf.KeyframeDTO.Parser);
+    private readonly pbc::RepeatedField<global::Polaris.Protobuf.KeyframeDTO> w_ = new pbc::RepeatedField<global::Polaris.Protobuf.KeyframeDTO>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Polaris.Protobuf.Keyframe> W {
+    public pbc::RepeatedField<global::Polaris.Protobuf.KeyframeDTO> W {
       get { return w_; }
     }
 
@@ -4173,9 +4174,9 @@ namespace Polaris.Protobuf {
 
     /// <summary>Field number for the "pos" field.</summary>
     public const int PosFieldNumber = 2;
-    private global::Polaris.Protobuf.Vector3 pos_;
+    private global::Polaris.Protobuf.Vector3DTO pos_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Polaris.Protobuf.Vector3 Pos {
+    public global::Polaris.Protobuf.Vector3DTO Pos {
       get { return pos_; }
       set {
         pos_ = value;
@@ -4184,9 +4185,9 @@ namespace Polaris.Protobuf {
 
     /// <summary>Field number for the "rot" field.</summary>
     public const int RotFieldNumber = 3;
-    private global::Polaris.Protobuf.Vector3 rot_;
+    private global::Polaris.Protobuf.Vector3DTO rot_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Polaris.Protobuf.Vector3 Rot {
+    public global::Polaris.Protobuf.Vector3DTO Rot {
       get { return rot_; }
       set {
         rot_ = value;
@@ -4276,13 +4277,13 @@ namespace Polaris.Protobuf {
       }
       if (other.pos_ != null) {
         if (pos_ == null) {
-          Pos = new global::Polaris.Protobuf.Vector3();
+          Pos = new global::Polaris.Protobuf.Vector3DTO();
         }
         Pos.MergeFrom(other.Pos);
       }
       if (other.rot_ != null) {
         if (rot_ == null) {
-          Rot = new global::Polaris.Protobuf.Vector3();
+          Rot = new global::Polaris.Protobuf.Vector3DTO();
         }
         Rot.MergeFrom(other.Rot);
       }
@@ -4303,14 +4304,14 @@ namespace Polaris.Protobuf {
           }
           case 18: {
             if (pos_ == null) {
-              Pos = new global::Polaris.Protobuf.Vector3();
+              Pos = new global::Polaris.Protobuf.Vector3DTO();
             }
             input.ReadMessage(Pos);
             break;
           }
           case 26: {
             if (rot_ == null) {
-              Rot = new global::Polaris.Protobuf.Vector3();
+              Rot = new global::Polaris.Protobuf.Vector3DTO();
             }
             input.ReadMessage(Rot);
             break;

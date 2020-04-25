@@ -18,35 +18,35 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='poses',
   syntax='proto3',
   serialized_options=b'\252\002\020Polaris.Protobuf',
-  serialized_pb=b'\n\x0bposes.proto\x12\x05poses\"*\n\x07Vector3\x12\t\n\x01x\x18\x01 \x01(\x02\x12\t\n\x01y\x18\x02 \x01(\x02\x12\t\n\x01z\x18\x03 \x01(\x02\"N\n\x08Keyframe\x12\x0c\n\x04time\x18\x01 \x01(\x02\x12\r\n\x05value\x18\x02 \x01(\x02\x12\x11\n\tinTangent\x18\x03 \x01(\x02\x12\x12\n\noutTangent\x18\x04 \x01(\x02\"A\n\x12KeypointEstimation\x12\t\n\x01x\x18\x65 \x01(\x02\x12\t\n\x01y\x18\x66 \x01(\x02\x12\t\n\x01z\x18g \x01(\x02\x12\n\n\x01p\x18\xc9\x01 \x01(\x02\"R\n\x18KeypointEstimationFrames\x12\n\n\x02id\x18\x65 \x01(\t\x12*\n\x06\x66rames\x18\xc9\x01 \x03(\x0b\x32\x19.poses.KeypointEstimation\"K\n\x14PoseEstimationFrames\x12\x33\n\tkeypoints\x18\xc9\x01 \x03(\x0b\x32\x1f.poses.KeypointEstimationFrames\"L\n\x14PoseEstimationResult\x12\x34\n\x0fposeEstimations\x18\x65 \x01(\x0b\x32\x1b.poses.PoseEstimationFrames\"k\n\x0f\x43\x61tegoryMoveDTO\x12\x0b\n\x03_id\x18\x01 \x01(\t\x12\x10\n\x08\x63\x61tegory\x18\x02 \x01(\t\x12\x0c\n\x04move\x18\x03 \x01(\t\x12\r\n\x05score\x18\x04 \x01(\x02\x12\x0e\n\x06losses\x18\x05 \x01(\x05\x12\x0c\n\x04wins\x18\x06 \x01(\x05\"+\n\x0cUserCoinsDTO\x12\x0c\n\x04user\x18\x01 \x01(\t\x12\r\n\x05\x63oins\x18\x02 \x01(\x05\"M\n\x1aUserCategoryContestListDTO\x12\x0b\n\x03_id\x18\x01 \x01(\t\x12\x10\n\x08\x63\x61tegory\x18\x02 \x01(\t\x12\x10\n\x08\x63ontests\x18\x03 \x03(\t\"Q\n\x17NextCategoryResponseDTO\x12\x36\n\x0b\x63ontestList\x18\x01 \x01(\x0b\x32!.poses.UserCategoryContestListDTO\"d\n\x16NextContestResponseDTO\x12\x16\n\x0enoMoreContests\x18\x01 \x01(\x08\x12\x32\n\x0buserContest\x18\x02 \x01(\x0b\x32\x1d.poses.UserCategoryContestDTO\"\x96\x01\n\x1e\x43\x61tegoryContestVoteResponseDTO\x12\x32\n\x0buserContest\x18\x01 \x01(\x0b\x32\x1d.poses.UserCategoryContestDTO\x12\x12\n\ncoinsAfter\x18\x02 \x01(\x05\x12,\n\x0cglobalScores\x18\x03 \x03(\x0b\x32\x16.poses.CategoryMoveDTO\"`\n\x12\x43\x61tegoryContestDTO\x12\x10\n\x08\x63\x61tegory\x18\x01 \x01(\t\x12\n\n\x02\x63\x31\x18\x02 \x01(\t\x12\n\n\x02\x63\x32\x18\x03 \x01(\t\x12\x0f\n\x07\x63\x31Votes\x18\x04 \x01(\x05\x12\x0f\n\x07\x63\x32Votes\x18\x05 \x01(\x05\"\x98\x01\n\x16UserCategoryContestDTO\x12\x0b\n\x03_id\x18\x01 \x01(\t\x12\x0c\n\x04user\x18\x02 \x01(\t\x12)\n\x0b\x63oinRewards\x18\x03 \x03(\x0b\x32\x14.poses.CoinRewardDTO\x12*\n\x07\x63ontest\x18\x04 \x01(\x0b\x32\x19.poses.CategoryContestDTO\x12\x0c\n\x04vote\x18\x05 \x01(\x05\"-\n\rCoinRewardDTO\x12\r\n\x05\x63oins\x18\x01 \x01(\x05\x12\r\n\x05state\x18\x02 \x01(\x05\"]\n\nMoveSetDTO\x12\x0b\n\x03_id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12$\n\x05moves\x18\x03 \x03(\x0b\x32\x15.poses.MoveSetMoveDTO\x12\x0e\n\x06length\x18\x04 \x01(\x02\"K\n\x0eMoveSetMoveDTO\x12\x0c\n\x04move\x18\x01 \x01(\t\x12+\n\x06timing\x18\x02 \x01(\x0b\x32\x1b.poses.MoveSetMoveTimingDTO\"Y\n\x14MoveSetMoveTimingDTO\x12\x0e\n\x06offset\x18\x01 \x01(\x02\x12\x0e\n\x06length\x18\x02 \x01(\x02\x12\x0f\n\x07\x62lendIn\x18\x03 \x01(\x02\x12\x10\n\x08\x62lendOut\x18\x04 \x01(\x02\"M\n\x07MoveDTO\x12\x32\n\x0ftransformCurves\x18\x01 \x03(\x0b\x32\x19.poses.TransformCurvesDTO\x12\x0e\n\x06length\x18\x02 \x01(\x02\"\x90\x01\n\x12TransformCurvesDTO\x12\x15\n\rtransformPath\x18\x01 \x01(\t\x12/\n\x0epositionCurves\x18\x02 \x01(\x0b\x32\x17.poses.Vector3CurvesDTO\x12\x32\n\x0erotationCurves\x18\x03 \x01(\x0b\x32\x1a.poses.QuaternionCurvesDTO\"f\n\x10Vector3CurvesDTO\x12\x1a\n\x01x\x18\x01 \x03(\x0b\x32\x0f.poses.Keyframe\x12\x1a\n\x01y\x18\x02 \x03(\x0b\x32\x0f.poses.Keyframe\x12\x1a\n\x01z\x18\x03 \x03(\x0b\x32\x0f.poses.Keyframe\"\x85\x01\n\x13QuaternionCurvesDTO\x12\x1a\n\x01x\x18\x01 \x03(\x0b\x32\x0f.poses.Keyframe\x12\x1a\n\x01y\x18\x02 \x03(\x0b\x32\x0f.poses.Keyframe\x12\x1a\n\x01z\x18\x03 \x03(\x0b\x32\x0f.poses.Keyframe\x12\x1a\n\x01w\x18\x04 \x03(\x0b\x32\x0f.poses.Keyframe\"c\n\x10TransformPoseDTO\x12\x15\n\rtransformPath\x18\x01 \x01(\t\x12\x1b\n\x03pos\x18\x02 \x01(\x0b\x32\x0e.poses.Vector3\x12\x1b\n\x03rot\x18\x03 \x01(\x0b\x32\x0e.poses.Vector3\"6\n\x07PoseDTO\x12+\n\ntransforms\x18\x01 \x03(\x0b\x32\x17.poses.TransformPoseDTO\"T\n\x11\x41nimatablePoseDTO\x12\x1d\n\x05\x62ones\x18\x01 \x01(\x0b\x32\x0e.poses.PoseDTO\x12 \n\x08\x63ontrols\x18\x02 \x01(\x0b\x32\x0e.poses.PoseDTO\"@\n\x11\x45\x64itorMovePoseDTO\x12\r\n\x05\x66rame\x18\x01 \x01(\x05\x12\x1c\n\x04pose\x18\x02 \x01(\x0b\x32\x0e.poses.PoseDTO\"A\n\x11\x45\x64itorMoveMetaDTO\x12\x17\n\x0f\x66ramesPerSecond\x18\x01 \x01(\x05\x12\x13\n\x0b\x66ramesTotal\x18\x02 \x01(\x05\"d\n\rEditorMoveDTO\x12*\n\x08metadata\x18\x01 \x01(\x0b\x32\x18.poses.EditorMoveMetaDTO\x12\'\n\x05poses\x18\x02 \x03(\x0b\x32\x18.poses.EditorMovePoseDTOB\x13\xaa\x02\x10Polaris.Protobufb\x06proto3'
+  serialized_pb=b'\n\x0bposes.proto\x12\x05poses\"-\n\nVector3DTO\x12\t\n\x01x\x18\x01 \x01(\x02\x12\t\n\x01y\x18\x02 \x01(\x02\x12\t\n\x01z\x18\x03 \x01(\x02\"Q\n\x0bKeyframeDTO\x12\x0c\n\x04time\x18\x01 \x01(\x02\x12\r\n\x05value\x18\x02 \x01(\x02\x12\x11\n\tinTangent\x18\x03 \x01(\x02\x12\x12\n\noutTangent\x18\x04 \x01(\x02\"A\n\x12KeypointEstimation\x12\t\n\x01x\x18\x65 \x01(\x02\x12\t\n\x01y\x18\x66 \x01(\x02\x12\t\n\x01z\x18g \x01(\x02\x12\n\n\x01p\x18\xc9\x01 \x01(\x02\"R\n\x18KeypointEstimationFrames\x12\n\n\x02id\x18\x65 \x01(\t\x12*\n\x06\x66rames\x18\xc9\x01 \x03(\x0b\x32\x19.poses.KeypointEstimation\"K\n\x14PoseEstimationFrames\x12\x33\n\tkeypoints\x18\xc9\x01 \x03(\x0b\x32\x1f.poses.KeypointEstimationFrames\"L\n\x14PoseEstimationResult\x12\x34\n\x0fposeEstimations\x18\x65 \x01(\x0b\x32\x1b.poses.PoseEstimationFrames\"k\n\x0f\x43\x61tegoryMoveDTO\x12\x0b\n\x03_id\x18\x01 \x01(\t\x12\x10\n\x08\x63\x61tegory\x18\x02 \x01(\t\x12\x0c\n\x04move\x18\x03 \x01(\t\x12\r\n\x05score\x18\x04 \x01(\x02\x12\x0e\n\x06losses\x18\x05 \x01(\x05\x12\x0c\n\x04wins\x18\x06 \x01(\x05\"+\n\x0cUserCoinsDTO\x12\x0c\n\x04user\x18\x01 \x01(\t\x12\r\n\x05\x63oins\x18\x02 \x01(\x05\"M\n\x1aUserCategoryContestListDTO\x12\x0b\n\x03_id\x18\x01 \x01(\t\x12\x10\n\x08\x63\x61tegory\x18\x02 \x01(\t\x12\x10\n\x08\x63ontests\x18\x03 \x03(\t\"Q\n\x17NextCategoryResponseDTO\x12\x36\n\x0b\x63ontestList\x18\x01 \x01(\x0b\x32!.poses.UserCategoryContestListDTO\"d\n\x16NextContestResponseDTO\x12\x16\n\x0enoMoreContests\x18\x01 \x01(\x08\x12\x32\n\x0buserContest\x18\x02 \x01(\x0b\x32\x1d.poses.UserCategoryContestDTO\"\x96\x01\n\x1e\x43\x61tegoryContestVoteResponseDTO\x12\x32\n\x0buserContest\x18\x01 \x01(\x0b\x32\x1d.poses.UserCategoryContestDTO\x12\x12\n\ncoinsAfter\x18\x02 \x01(\x05\x12,\n\x0cglobalScores\x18\x03 \x03(\x0b\x32\x16.poses.CategoryMoveDTO\"`\n\x12\x43\x61tegoryContestDTO\x12\x10\n\x08\x63\x61tegory\x18\x01 \x01(\t\x12\n\n\x02\x63\x31\x18\x02 \x01(\t\x12\n\n\x02\x63\x32\x18\x03 \x01(\t\x12\x0f\n\x07\x63\x31Votes\x18\x04 \x01(\x05\x12\x0f\n\x07\x63\x32Votes\x18\x05 \x01(\x05\"\x98\x01\n\x16UserCategoryContestDTO\x12\x0b\n\x03_id\x18\x01 \x01(\t\x12\x0c\n\x04user\x18\x02 \x01(\t\x12)\n\x0b\x63oinRewards\x18\x03 \x03(\x0b\x32\x14.poses.CoinRewardDTO\x12*\n\x07\x63ontest\x18\x04 \x01(\x0b\x32\x19.poses.CategoryContestDTO\x12\x0c\n\x04vote\x18\x05 \x01(\x05\"-\n\rCoinRewardDTO\x12\r\n\x05\x63oins\x18\x01 \x01(\x05\x12\r\n\x05state\x18\x02 \x01(\x05\"]\n\nMoveSetDTO\x12\x0b\n\x03_id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12$\n\x05moves\x18\x03 \x03(\x0b\x32\x15.poses.MoveSetMoveDTO\x12\x0e\n\x06length\x18\x04 \x01(\x02\"K\n\x0eMoveSetMoveDTO\x12\x0c\n\x04move\x18\x01 \x01(\t\x12+\n\x06timing\x18\x02 \x01(\x0b\x32\x1b.poses.MoveSetMoveTimingDTO\"Y\n\x14MoveSetMoveTimingDTO\x12\x0e\n\x06offset\x18\x01 \x01(\x02\x12\x0e\n\x06length\x18\x02 \x01(\x02\x12\x0f\n\x07\x62lendIn\x18\x03 \x01(\x02\x12\x10\n\x08\x62lendOut\x18\x04 \x01(\x02\"M\n\x07MoveDTO\x12\x32\n\x0ftransformCurves\x18\x01 \x03(\x0b\x32\x19.poses.TransformCurvesDTO\x12\x0e\n\x06length\x18\x02 \x01(\x02\"\x90\x01\n\x12TransformCurvesDTO\x12\x15\n\rtransformPath\x18\x01 \x01(\t\x12/\n\x0epositionCurves\x18\x02 \x01(\x0b\x32\x17.poses.Vector3CurvesDTO\x12\x32\n\x0erotationCurves\x18\x03 \x01(\x0b\x32\x1a.poses.QuaternionCurvesDTO\"o\n\x10Vector3CurvesDTO\x12\x1d\n\x01x\x18\x01 \x03(\x0b\x32\x12.poses.KeyframeDTO\x12\x1d\n\x01y\x18\x02 \x03(\x0b\x32\x12.poses.KeyframeDTO\x12\x1d\n\x01z\x18\x03 \x03(\x0b\x32\x12.poses.KeyframeDTO\"\x91\x01\n\x13QuaternionCurvesDTO\x12\x1d\n\x01x\x18\x01 \x03(\x0b\x32\x12.poses.KeyframeDTO\x12\x1d\n\x01y\x18\x02 \x03(\x0b\x32\x12.poses.KeyframeDTO\x12\x1d\n\x01z\x18\x03 \x03(\x0b\x32\x12.poses.KeyframeDTO\x12\x1d\n\x01w\x18\x04 \x03(\x0b\x32\x12.poses.KeyframeDTO\"i\n\x10TransformPoseDTO\x12\x15\n\rtransformPath\x18\x01 \x01(\t\x12\x1e\n\x03pos\x18\x02 \x01(\x0b\x32\x11.poses.Vector3DTO\x12\x1e\n\x03rot\x18\x03 \x01(\x0b\x32\x11.poses.Vector3DTO\"6\n\x07PoseDTO\x12+\n\ntransforms\x18\x01 \x03(\x0b\x32\x17.poses.TransformPoseDTO\"T\n\x11\x41nimatablePoseDTO\x12\x1d\n\x05\x62ones\x18\x01 \x01(\x0b\x32\x0e.poses.PoseDTO\x12 \n\x08\x63ontrols\x18\x02 \x01(\x0b\x32\x0e.poses.PoseDTO\"@\n\x11\x45\x64itorMovePoseDTO\x12\r\n\x05\x66rame\x18\x01 \x01(\x05\x12\x1c\n\x04pose\x18\x02 \x01(\x0b\x32\x0e.poses.PoseDTO\"A\n\x11\x45\x64itorMoveMetaDTO\x12\x17\n\x0f\x66ramesPerSecond\x18\x01 \x01(\x05\x12\x13\n\x0b\x66ramesTotal\x18\x02 \x01(\x05\"d\n\rEditorMoveDTO\x12*\n\x08metadata\x18\x01 \x01(\x0b\x32\x18.poses.EditorMoveMetaDTO\x12\'\n\x05poses\x18\x02 \x03(\x0b\x32\x18.poses.EditorMovePoseDTOB\x13\xaa\x02\x10Polaris.Protobufb\x06proto3'
 )
 
 
 
 
-_VECTOR3 = _descriptor.Descriptor(
-  name='Vector3',
-  full_name='poses.Vector3',
+_VECTOR3DTO = _descriptor.Descriptor(
+  name='Vector3DTO',
+  full_name='poses.Vector3DTO',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='x', full_name='poses.Vector3.x', index=0,
+      name='x', full_name='poses.Vector3DTO.x', index=0,
       number=1, type=2, cpp_type=6, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='y', full_name='poses.Vector3.y', index=1,
+      name='y', full_name='poses.Vector3DTO.y', index=1,
       number=2, type=2, cpp_type=6, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='z', full_name='poses.Vector3.z', index=2,
+      name='z', full_name='poses.Vector3DTO.z', index=2,
       number=3, type=2, cpp_type=6, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
@@ -65,40 +65,40 @@ _VECTOR3 = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=22,
-  serialized_end=64,
+  serialized_end=67,
 )
 
 
-_KEYFRAME = _descriptor.Descriptor(
-  name='Keyframe',
-  full_name='poses.Keyframe',
+_KEYFRAMEDTO = _descriptor.Descriptor(
+  name='KeyframeDTO',
+  full_name='poses.KeyframeDTO',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='time', full_name='poses.Keyframe.time', index=0,
+      name='time', full_name='poses.KeyframeDTO.time', index=0,
       number=1, type=2, cpp_type=6, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='value', full_name='poses.Keyframe.value', index=1,
+      name='value', full_name='poses.KeyframeDTO.value', index=1,
       number=2, type=2, cpp_type=6, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='inTangent', full_name='poses.Keyframe.inTangent', index=2,
+      name='inTangent', full_name='poses.KeyframeDTO.inTangent', index=2,
       number=3, type=2, cpp_type=6, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='outTangent', full_name='poses.Keyframe.outTangent', index=3,
+      name='outTangent', full_name='poses.KeyframeDTO.outTangent', index=3,
       number=4, type=2, cpp_type=6, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
@@ -116,8 +116,8 @@ _KEYFRAME = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=66,
-  serialized_end=144,
+  serialized_start=69,
+  serialized_end=150,
 )
 
 
@@ -168,8 +168,8 @@ _KEYPOINTESTIMATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=146,
-  serialized_end=211,
+  serialized_start=152,
+  serialized_end=217,
 )
 
 
@@ -206,8 +206,8 @@ _KEYPOINTESTIMATIONFRAMES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=213,
-  serialized_end=295,
+  serialized_start=219,
+  serialized_end=301,
 )
 
 
@@ -237,8 +237,8 @@ _POSEESTIMATIONFRAMES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=297,
-  serialized_end=372,
+  serialized_start=303,
+  serialized_end=378,
 )
 
 
@@ -268,8 +268,8 @@ _POSEESTIMATIONRESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=374,
-  serialized_end=450,
+  serialized_start=380,
+  serialized_end=456,
 )
 
 
@@ -334,8 +334,8 @@ _CATEGORYMOVEDTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=452,
-  serialized_end=559,
+  serialized_start=458,
+  serialized_end=565,
 )
 
 
@@ -372,8 +372,8 @@ _USERCOINSDTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=561,
-  serialized_end=604,
+  serialized_start=567,
+  serialized_end=610,
 )
 
 
@@ -417,8 +417,8 @@ _USERCATEGORYCONTESTLISTDTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=606,
-  serialized_end=683,
+  serialized_start=612,
+  serialized_end=689,
 )
 
 
@@ -448,8 +448,8 @@ _NEXTCATEGORYRESPONSEDTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=685,
-  serialized_end=766,
+  serialized_start=691,
+  serialized_end=772,
 )
 
 
@@ -486,8 +486,8 @@ _NEXTCONTESTRESPONSEDTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=768,
-  serialized_end=868,
+  serialized_start=774,
+  serialized_end=874,
 )
 
 
@@ -531,8 +531,8 @@ _CATEGORYCONTESTVOTERESPONSEDTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=871,
-  serialized_end=1021,
+  serialized_start=877,
+  serialized_end=1027,
 )
 
 
@@ -590,8 +590,8 @@ _CATEGORYCONTESTDTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1023,
-  serialized_end=1119,
+  serialized_start=1029,
+  serialized_end=1125,
 )
 
 
@@ -649,8 +649,8 @@ _USERCATEGORYCONTESTDTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1122,
-  serialized_end=1274,
+  serialized_start=1128,
+  serialized_end=1280,
 )
 
 
@@ -687,8 +687,8 @@ _COINREWARDDTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1276,
-  serialized_end=1321,
+  serialized_start=1282,
+  serialized_end=1327,
 )
 
 
@@ -739,8 +739,8 @@ _MOVESETDTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1323,
-  serialized_end=1416,
+  serialized_start=1329,
+  serialized_end=1422,
 )
 
 
@@ -777,8 +777,8 @@ _MOVESETMOVEDTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1418,
-  serialized_end=1493,
+  serialized_start=1424,
+  serialized_end=1499,
 )
 
 
@@ -829,8 +829,8 @@ _MOVESETMOVETIMINGDTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1495,
-  serialized_end=1584,
+  serialized_start=1501,
+  serialized_end=1590,
 )
 
 
@@ -867,8 +867,8 @@ _MOVEDTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1586,
-  serialized_end=1663,
+  serialized_start=1592,
+  serialized_end=1669,
 )
 
 
@@ -912,8 +912,8 @@ _TRANSFORMCURVESDTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1666,
-  serialized_end=1810,
+  serialized_start=1672,
+  serialized_end=1816,
 )
 
 
@@ -957,8 +957,8 @@ _VECTOR3CURVESDTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1812,
-  serialized_end=1914,
+  serialized_start=1818,
+  serialized_end=1929,
 )
 
 
@@ -1009,8 +1009,8 @@ _QUATERNIONCURVESDTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1917,
-  serialized_end=2050,
+  serialized_start=1932,
+  serialized_end=2077,
 )
 
 
@@ -1054,8 +1054,8 @@ _TRANSFORMPOSEDTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2052,
-  serialized_end=2151,
+  serialized_start=2079,
+  serialized_end=2184,
 )
 
 
@@ -1085,8 +1085,8 @@ _POSEDTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2153,
-  serialized_end=2207,
+  serialized_start=2186,
+  serialized_end=2240,
 )
 
 
@@ -1123,8 +1123,8 @@ _ANIMATABLEPOSEDTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2209,
-  serialized_end=2293,
+  serialized_start=2242,
+  serialized_end=2326,
 )
 
 
@@ -1161,8 +1161,8 @@ _EDITORMOVEPOSEDTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2295,
-  serialized_end=2359,
+  serialized_start=2328,
+  serialized_end=2392,
 )
 
 
@@ -1199,8 +1199,8 @@ _EDITORMOVEMETADTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2361,
-  serialized_end=2426,
+  serialized_start=2394,
+  serialized_end=2459,
 )
 
 
@@ -1237,8 +1237,8 @@ _EDITORMOVEDTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2428,
-  serialized_end=2528,
+  serialized_start=2461,
+  serialized_end=2561,
 )
 
 _KEYPOINTESTIMATIONFRAMES.fields_by_name['frames'].message_type = _KEYPOINTESTIMATION
@@ -1255,23 +1255,23 @@ _MOVESETMOVEDTO.fields_by_name['timing'].message_type = _MOVESETMOVETIMINGDTO
 _MOVEDTO.fields_by_name['transformCurves'].message_type = _TRANSFORMCURVESDTO
 _TRANSFORMCURVESDTO.fields_by_name['positionCurves'].message_type = _VECTOR3CURVESDTO
 _TRANSFORMCURVESDTO.fields_by_name['rotationCurves'].message_type = _QUATERNIONCURVESDTO
-_VECTOR3CURVESDTO.fields_by_name['x'].message_type = _KEYFRAME
-_VECTOR3CURVESDTO.fields_by_name['y'].message_type = _KEYFRAME
-_VECTOR3CURVESDTO.fields_by_name['z'].message_type = _KEYFRAME
-_QUATERNIONCURVESDTO.fields_by_name['x'].message_type = _KEYFRAME
-_QUATERNIONCURVESDTO.fields_by_name['y'].message_type = _KEYFRAME
-_QUATERNIONCURVESDTO.fields_by_name['z'].message_type = _KEYFRAME
-_QUATERNIONCURVESDTO.fields_by_name['w'].message_type = _KEYFRAME
-_TRANSFORMPOSEDTO.fields_by_name['pos'].message_type = _VECTOR3
-_TRANSFORMPOSEDTO.fields_by_name['rot'].message_type = _VECTOR3
+_VECTOR3CURVESDTO.fields_by_name['x'].message_type = _KEYFRAMEDTO
+_VECTOR3CURVESDTO.fields_by_name['y'].message_type = _KEYFRAMEDTO
+_VECTOR3CURVESDTO.fields_by_name['z'].message_type = _KEYFRAMEDTO
+_QUATERNIONCURVESDTO.fields_by_name['x'].message_type = _KEYFRAMEDTO
+_QUATERNIONCURVESDTO.fields_by_name['y'].message_type = _KEYFRAMEDTO
+_QUATERNIONCURVESDTO.fields_by_name['z'].message_type = _KEYFRAMEDTO
+_QUATERNIONCURVESDTO.fields_by_name['w'].message_type = _KEYFRAMEDTO
+_TRANSFORMPOSEDTO.fields_by_name['pos'].message_type = _VECTOR3DTO
+_TRANSFORMPOSEDTO.fields_by_name['rot'].message_type = _VECTOR3DTO
 _POSEDTO.fields_by_name['transforms'].message_type = _TRANSFORMPOSEDTO
 _ANIMATABLEPOSEDTO.fields_by_name['bones'].message_type = _POSEDTO
 _ANIMATABLEPOSEDTO.fields_by_name['controls'].message_type = _POSEDTO
 _EDITORMOVEPOSEDTO.fields_by_name['pose'].message_type = _POSEDTO
 _EDITORMOVEDTO.fields_by_name['metadata'].message_type = _EDITORMOVEMETADTO
 _EDITORMOVEDTO.fields_by_name['poses'].message_type = _EDITORMOVEPOSEDTO
-DESCRIPTOR.message_types_by_name['Vector3'] = _VECTOR3
-DESCRIPTOR.message_types_by_name['Keyframe'] = _KEYFRAME
+DESCRIPTOR.message_types_by_name['Vector3DTO'] = _VECTOR3DTO
+DESCRIPTOR.message_types_by_name['KeyframeDTO'] = _KEYFRAMEDTO
 DESCRIPTOR.message_types_by_name['KeypointEstimation'] = _KEYPOINTESTIMATION
 DESCRIPTOR.message_types_by_name['KeypointEstimationFrames'] = _KEYPOINTESTIMATIONFRAMES
 DESCRIPTOR.message_types_by_name['PoseEstimationFrames'] = _POSEESTIMATIONFRAMES
@@ -1300,19 +1300,19 @@ DESCRIPTOR.message_types_by_name['EditorMoveMetaDTO'] = _EDITORMOVEMETADTO
 DESCRIPTOR.message_types_by_name['EditorMoveDTO'] = _EDITORMOVEDTO
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
-Vector3 = _reflection.GeneratedProtocolMessageType('Vector3', (_message.Message,), {
-  'DESCRIPTOR' : _VECTOR3,
+Vector3DTO = _reflection.GeneratedProtocolMessageType('Vector3DTO', (_message.Message,), {
+  'DESCRIPTOR' : _VECTOR3DTO,
   '__module__' : 'poses_pb2'
-  # @@protoc_insertion_point(class_scope:poses.Vector3)
+  # @@protoc_insertion_point(class_scope:poses.Vector3DTO)
   })
-_sym_db.RegisterMessage(Vector3)
+_sym_db.RegisterMessage(Vector3DTO)
 
-Keyframe = _reflection.GeneratedProtocolMessageType('Keyframe', (_message.Message,), {
-  'DESCRIPTOR' : _KEYFRAME,
+KeyframeDTO = _reflection.GeneratedProtocolMessageType('KeyframeDTO', (_message.Message,), {
+  'DESCRIPTOR' : _KEYFRAMEDTO,
   '__module__' : 'poses_pb2'
-  # @@protoc_insertion_point(class_scope:poses.Keyframe)
+  # @@protoc_insertion_point(class_scope:poses.KeyframeDTO)
   })
-_sym_db.RegisterMessage(Keyframe)
+_sym_db.RegisterMessage(KeyframeDTO)
 
 KeypointEstimation = _reflection.GeneratedProtocolMessageType('KeypointEstimation', (_message.Message,), {
   'DESCRIPTOR' : _KEYPOINTESTIMATION,
