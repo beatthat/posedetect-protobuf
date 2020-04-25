@@ -6,829 +6,1275 @@ from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from google.protobuf import reflection as _reflection
 from google.protobuf import symbol_database as _symbol_database
+
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
 
 
-
-
 DESCRIPTOR = _descriptor.FileDescriptor(
-  name='poses.proto',
-  package='poses',
-  syntax='proto3',
-  serialized_options=b'\252\002\020Polaris.Protobuf',
-  serialized_pb=b'\n\x0bposes.proto\x12\x05poses\"-\n\nVector3DTO\x12\t\n\x01x\x18\x01 \x01(\x02\x12\t\n\x01y\x18\x02 \x01(\x02\x12\t\n\x01z\x18\x03 \x01(\x02\"Q\n\x0bKeyframeDTO\x12\x0c\n\x04time\x18\x01 \x01(\x02\x12\r\n\x05value\x18\x02 \x01(\x02\x12\x11\n\tinTangent\x18\x03 \x01(\x02\x12\x12\n\noutTangent\x18\x04 \x01(\x02\"A\n\x12KeypointEstimation\x12\t\n\x01x\x18\x65 \x01(\x02\x12\t\n\x01y\x18\x66 \x01(\x02\x12\t\n\x01z\x18g \x01(\x02\x12\n\n\x01p\x18\xc9\x01 \x01(\x02\"R\n\x18KeypointEstimationFrames\x12\n\n\x02id\x18\x65 \x01(\t\x12*\n\x06\x66rames\x18\xc9\x01 \x03(\x0b\x32\x19.poses.KeypointEstimation\"K\n\x14PoseEstimationFrames\x12\x33\n\tkeypoints\x18\xc9\x01 \x03(\x0b\x32\x1f.poses.KeypointEstimationFrames\"L\n\x14PoseEstimationResult\x12\x34\n\x0fposeEstimations\x18\x65 \x01(\x0b\x32\x1b.poses.PoseEstimationFrames\"M\n\x07MoveDTO\x12\x32\n\x0ftransformCurves\x18\x01 \x03(\x0b\x32\x19.poses.TransformCurvesDTO\x12\x0e\n\x06length\x18\x02 \x01(\x02\"\x90\x01\n\x12TransformCurvesDTO\x12\x15\n\rtransformPath\x18\x01 \x01(\t\x12/\n\x0epositionCurves\x18\x02 \x01(\x0b\x32\x17.poses.Vector3CurvesDTO\x12\x32\n\x0erotationCurves\x18\x03 \x01(\x0b\x32\x1a.poses.QuaternionCurvesDTO\"o\n\x10Vector3CurvesDTO\x12\x1d\n\x01x\x18\x01 \x03(\x0b\x32\x12.poses.KeyframeDTO\x12\x1d\n\x01y\x18\x02 \x03(\x0b\x32\x12.poses.KeyframeDTO\x12\x1d\n\x01z\x18\x03 \x03(\x0b\x32\x12.poses.KeyframeDTO\"\x91\x01\n\x13QuaternionCurvesDTO\x12\x1d\n\x01x\x18\x01 \x03(\x0b\x32\x12.poses.KeyframeDTO\x12\x1d\n\x01y\x18\x02 \x03(\x0b\x32\x12.poses.KeyframeDTO\x12\x1d\n\x01z\x18\x03 \x03(\x0b\x32\x12.poses.KeyframeDTO\x12\x1d\n\x01w\x18\x04 \x03(\x0b\x32\x12.poses.KeyframeDTO\"i\n\x10TransformPoseDTO\x12\x15\n\rtransformPath\x18\x01 \x01(\t\x12\x1e\n\x03pos\x18\x02 \x01(\x0b\x32\x11.poses.Vector3DTO\x12\x1e\n\x03rot\x18\x03 \x01(\x0b\x32\x11.poses.Vector3DTO\"6\n\x07PoseDTO\x12+\n\ntransforms\x18\x01 \x03(\x0b\x32\x17.poses.TransformPoseDTO\"T\n\x11\x41nimatablePoseDTO\x12\x1d\n\x05\x62ones\x18\x01 \x01(\x0b\x32\x0e.poses.PoseDTO\x12 \n\x08\x63ontrols\x18\x02 \x01(\x0b\x32\x0e.poses.PoseDTO\"@\n\x11\x45\x64itorMovePoseDTO\x12\r\n\x05\x66rame\x18\x01 \x01(\x05\x12\x1c\n\x04pose\x18\x02 \x01(\x0b\x32\x0e.poses.PoseDTO\"A\n\x11\x45\x64itorMoveMetaDTO\x12\x17\n\x0f\x66ramesPerSecond\x18\x01 \x01(\x05\x12\x13\n\x0b\x66ramesTotal\x18\x02 \x01(\x05\"d\n\rEditorMoveDTO\x12*\n\x08metadata\x18\x01 \x01(\x0b\x32\x18.poses.EditorMoveMetaDTO\x12\'\n\x05poses\x18\x02 \x03(\x0b\x32\x18.poses.EditorMovePoseDTOB\x13\xaa\x02\x10Polaris.Protobufb\x06proto3'
+    name="poses.proto",
+    package="poses",
+    syntax="proto3",
+    serialized_options=b"\252\002\020Polaris.Protobuf",
+    serialized_pb=b'\n\x0bposes.proto\x12\x05poses"-\n\nVector3DTO\x12\t\n\x01x\x18\x01 \x01(\x02\x12\t\n\x01y\x18\x02 \x01(\x02\x12\t\n\x01z\x18\x03 \x01(\x02"Q\n\x0bKeyframeDTO\x12\x0c\n\x04time\x18\x01 \x01(\x02\x12\r\n\x05value\x18\x02 \x01(\x02\x12\x11\n\tinTangent\x18\x03 \x01(\x02\x12\x12\n\noutTangent\x18\x04 \x01(\x02"A\n\x12KeypointEstimation\x12\t\n\x01x\x18\x65 \x01(\x02\x12\t\n\x01y\x18\x66 \x01(\x02\x12\t\n\x01z\x18g \x01(\x02\x12\n\n\x01p\x18\xc9\x01 \x01(\x02"R\n\x18KeypointEstimationFrames\x12\n\n\x02id\x18\x65 \x01(\t\x12*\n\x06\x66rames\x18\xc9\x01 \x03(\x0b\x32\x19.poses.KeypointEstimation"K\n\x14PoseEstimationFrames\x12\x33\n\tkeypoints\x18\xc9\x01 \x03(\x0b\x32\x1f.poses.KeypointEstimationFrames"L\n\x14PoseEstimationResult\x12\x34\n\x0fposeEstimations\x18\x65 \x01(\x0b\x32\x1b.poses.PoseEstimationFrames"M\n\x07MoveDTO\x12\x32\n\x0ftransformCurves\x18\x01 \x03(\x0b\x32\x19.poses.TransformCurvesDTO\x12\x0e\n\x06length\x18\x02 \x01(\x02"\x90\x01\n\x12TransformCurvesDTO\x12\x15\n\rtransformPath\x18\x01 \x01(\t\x12/\n\x0epositionCurves\x18\x02 \x01(\x0b\x32\x17.poses.Vector3CurvesDTO\x12\x32\n\x0erotationCurves\x18\x03 \x01(\x0b\x32\x1a.poses.QuaternionCurvesDTO"o\n\x10Vector3CurvesDTO\x12\x1d\n\x01x\x18\x01 \x03(\x0b\x32\x12.poses.KeyframeDTO\x12\x1d\n\x01y\x18\x02 \x03(\x0b\x32\x12.poses.KeyframeDTO\x12\x1d\n\x01z\x18\x03 \x03(\x0b\x32\x12.poses.KeyframeDTO"\x91\x01\n\x13QuaternionCurvesDTO\x12\x1d\n\x01x\x18\x01 \x03(\x0b\x32\x12.poses.KeyframeDTO\x12\x1d\n\x01y\x18\x02 \x03(\x0b\x32\x12.poses.KeyframeDTO\x12\x1d\n\x01z\x18\x03 \x03(\x0b\x32\x12.poses.KeyframeDTO\x12\x1d\n\x01w\x18\x04 \x03(\x0b\x32\x12.poses.KeyframeDTO"i\n\x10TransformPoseDTO\x12\x15\n\rtransformPath\x18\x01 \x01(\t\x12\x1e\n\x03pos\x18\x02 \x01(\x0b\x32\x11.poses.Vector3DTO\x12\x1e\n\x03rot\x18\x03 \x01(\x0b\x32\x11.poses.Vector3DTO"6\n\x07PoseDTO\x12+\n\ntransforms\x18\x01 \x03(\x0b\x32\x17.poses.TransformPoseDTO"T\n\x11\x41nimatablePoseDTO\x12\x1d\n\x05\x62ones\x18\x01 \x01(\x0b\x32\x0e.poses.PoseDTO\x12 \n\x08\x63ontrols\x18\x02 \x01(\x0b\x32\x0e.poses.PoseDTO"@\n\x11\x45\x64itorMovePoseDTO\x12\r\n\x05\x66rame\x18\x01 \x01(\x05\x12\x1c\n\x04pose\x18\x02 \x01(\x0b\x32\x0e.poses.PoseDTO"A\n\x11\x45\x64itorMoveMetaDTO\x12\x17\n\x0f\x66ramesPerSecond\x18\x01 \x01(\x05\x12\x13\n\x0b\x66ramesTotal\x18\x02 \x01(\x05"d\n\rEditorMoveDTO\x12*\n\x08metadata\x18\x01 \x01(\x0b\x32\x18.poses.EditorMoveMetaDTO\x12\'\n\x05poses\x18\x02 \x03(\x0b\x32\x18.poses.EditorMovePoseDTOB\x13\xaa\x02\x10Polaris.Protobufb\x06proto3',
 )
 
 
-
-
 _VECTOR3DTO = _descriptor.Descriptor(
-  name='Vector3DTO',
-  full_name='poses.Vector3DTO',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='x', full_name='poses.Vector3DTO.x', index=0,
-      number=1, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=float(0),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='y', full_name='poses.Vector3DTO.y', index=1,
-      number=2, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=float(0),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='z', full_name='poses.Vector3DTO.z', index=2,
-      number=3, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=float(0),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=22,
-  serialized_end=67,
+    name="Vector3DTO",
+    full_name="poses.Vector3DTO",
+    filename=None,
+    file=DESCRIPTOR,
+    containing_type=None,
+    fields=[
+        _descriptor.FieldDescriptor(
+            name="x",
+            full_name="poses.Vector3DTO.x",
+            index=0,
+            number=1,
+            type=2,
+            cpp_type=6,
+            label=1,
+            has_default_value=False,
+            default_value=float(0),
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=None,
+            file=DESCRIPTOR,
+        ),
+        _descriptor.FieldDescriptor(
+            name="y",
+            full_name="poses.Vector3DTO.y",
+            index=1,
+            number=2,
+            type=2,
+            cpp_type=6,
+            label=1,
+            has_default_value=False,
+            default_value=float(0),
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=None,
+            file=DESCRIPTOR,
+        ),
+        _descriptor.FieldDescriptor(
+            name="z",
+            full_name="poses.Vector3DTO.z",
+            index=2,
+            number=3,
+            type=2,
+            cpp_type=6,
+            label=1,
+            has_default_value=False,
+            default_value=float(0),
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=None,
+            file=DESCRIPTOR,
+        ),
+    ],
+    extensions=[],
+    nested_types=[],
+    enum_types=[],
+    serialized_options=None,
+    is_extendable=False,
+    syntax="proto3",
+    extension_ranges=[],
+    oneofs=[],
+    serialized_start=22,
+    serialized_end=67,
 )
 
 
 _KEYFRAMEDTO = _descriptor.Descriptor(
-  name='KeyframeDTO',
-  full_name='poses.KeyframeDTO',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='time', full_name='poses.KeyframeDTO.time', index=0,
-      number=1, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=float(0),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='value', full_name='poses.KeyframeDTO.value', index=1,
-      number=2, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=float(0),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='inTangent', full_name='poses.KeyframeDTO.inTangent', index=2,
-      number=3, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=float(0),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='outTangent', full_name='poses.KeyframeDTO.outTangent', index=3,
-      number=4, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=float(0),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=69,
-  serialized_end=150,
+    name="KeyframeDTO",
+    full_name="poses.KeyframeDTO",
+    filename=None,
+    file=DESCRIPTOR,
+    containing_type=None,
+    fields=[
+        _descriptor.FieldDescriptor(
+            name="time",
+            full_name="poses.KeyframeDTO.time",
+            index=0,
+            number=1,
+            type=2,
+            cpp_type=6,
+            label=1,
+            has_default_value=False,
+            default_value=float(0),
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=None,
+            file=DESCRIPTOR,
+        ),
+        _descriptor.FieldDescriptor(
+            name="value",
+            full_name="poses.KeyframeDTO.value",
+            index=1,
+            number=2,
+            type=2,
+            cpp_type=6,
+            label=1,
+            has_default_value=False,
+            default_value=float(0),
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=None,
+            file=DESCRIPTOR,
+        ),
+        _descriptor.FieldDescriptor(
+            name="inTangent",
+            full_name="poses.KeyframeDTO.inTangent",
+            index=2,
+            number=3,
+            type=2,
+            cpp_type=6,
+            label=1,
+            has_default_value=False,
+            default_value=float(0),
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=None,
+            file=DESCRIPTOR,
+        ),
+        _descriptor.FieldDescriptor(
+            name="outTangent",
+            full_name="poses.KeyframeDTO.outTangent",
+            index=3,
+            number=4,
+            type=2,
+            cpp_type=6,
+            label=1,
+            has_default_value=False,
+            default_value=float(0),
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=None,
+            file=DESCRIPTOR,
+        ),
+    ],
+    extensions=[],
+    nested_types=[],
+    enum_types=[],
+    serialized_options=None,
+    is_extendable=False,
+    syntax="proto3",
+    extension_ranges=[],
+    oneofs=[],
+    serialized_start=69,
+    serialized_end=150,
 )
 
 
 _KEYPOINTESTIMATION = _descriptor.Descriptor(
-  name='KeypointEstimation',
-  full_name='poses.KeypointEstimation',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='x', full_name='poses.KeypointEstimation.x', index=0,
-      number=101, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=float(0),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='y', full_name='poses.KeypointEstimation.y', index=1,
-      number=102, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=float(0),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='z', full_name='poses.KeypointEstimation.z', index=2,
-      number=103, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=float(0),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='p', full_name='poses.KeypointEstimation.p', index=3,
-      number=201, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=float(0),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=152,
-  serialized_end=217,
+    name="KeypointEstimation",
+    full_name="poses.KeypointEstimation",
+    filename=None,
+    file=DESCRIPTOR,
+    containing_type=None,
+    fields=[
+        _descriptor.FieldDescriptor(
+            name="x",
+            full_name="poses.KeypointEstimation.x",
+            index=0,
+            number=101,
+            type=2,
+            cpp_type=6,
+            label=1,
+            has_default_value=False,
+            default_value=float(0),
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=None,
+            file=DESCRIPTOR,
+        ),
+        _descriptor.FieldDescriptor(
+            name="y",
+            full_name="poses.KeypointEstimation.y",
+            index=1,
+            number=102,
+            type=2,
+            cpp_type=6,
+            label=1,
+            has_default_value=False,
+            default_value=float(0),
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=None,
+            file=DESCRIPTOR,
+        ),
+        _descriptor.FieldDescriptor(
+            name="z",
+            full_name="poses.KeypointEstimation.z",
+            index=2,
+            number=103,
+            type=2,
+            cpp_type=6,
+            label=1,
+            has_default_value=False,
+            default_value=float(0),
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=None,
+            file=DESCRIPTOR,
+        ),
+        _descriptor.FieldDescriptor(
+            name="p",
+            full_name="poses.KeypointEstimation.p",
+            index=3,
+            number=201,
+            type=2,
+            cpp_type=6,
+            label=1,
+            has_default_value=False,
+            default_value=float(0),
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=None,
+            file=DESCRIPTOR,
+        ),
+    ],
+    extensions=[],
+    nested_types=[],
+    enum_types=[],
+    serialized_options=None,
+    is_extendable=False,
+    syntax="proto3",
+    extension_ranges=[],
+    oneofs=[],
+    serialized_start=152,
+    serialized_end=217,
 )
 
 
 _KEYPOINTESTIMATIONFRAMES = _descriptor.Descriptor(
-  name='KeypointEstimationFrames',
-  full_name='poses.KeypointEstimationFrames',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='id', full_name='poses.KeypointEstimationFrames.id', index=0,
-      number=101, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='frames', full_name='poses.KeypointEstimationFrames.frames', index=1,
-      number=201, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=219,
-  serialized_end=301,
+    name="KeypointEstimationFrames",
+    full_name="poses.KeypointEstimationFrames",
+    filename=None,
+    file=DESCRIPTOR,
+    containing_type=None,
+    fields=[
+        _descriptor.FieldDescriptor(
+            name="id",
+            full_name="poses.KeypointEstimationFrames.id",
+            index=0,
+            number=101,
+            type=9,
+            cpp_type=9,
+            label=1,
+            has_default_value=False,
+            default_value=b"".decode("utf-8"),
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=None,
+            file=DESCRIPTOR,
+        ),
+        _descriptor.FieldDescriptor(
+            name="frames",
+            full_name="poses.KeypointEstimationFrames.frames",
+            index=1,
+            number=201,
+            type=11,
+            cpp_type=10,
+            label=3,
+            has_default_value=False,
+            default_value=[],
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=None,
+            file=DESCRIPTOR,
+        ),
+    ],
+    extensions=[],
+    nested_types=[],
+    enum_types=[],
+    serialized_options=None,
+    is_extendable=False,
+    syntax="proto3",
+    extension_ranges=[],
+    oneofs=[],
+    serialized_start=219,
+    serialized_end=301,
 )
 
 
 _POSEESTIMATIONFRAMES = _descriptor.Descriptor(
-  name='PoseEstimationFrames',
-  full_name='poses.PoseEstimationFrames',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='keypoints', full_name='poses.PoseEstimationFrames.keypoints', index=0,
-      number=201, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=303,
-  serialized_end=378,
+    name="PoseEstimationFrames",
+    full_name="poses.PoseEstimationFrames",
+    filename=None,
+    file=DESCRIPTOR,
+    containing_type=None,
+    fields=[
+        _descriptor.FieldDescriptor(
+            name="keypoints",
+            full_name="poses.PoseEstimationFrames.keypoints",
+            index=0,
+            number=201,
+            type=11,
+            cpp_type=10,
+            label=3,
+            has_default_value=False,
+            default_value=[],
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=None,
+            file=DESCRIPTOR,
+        )
+    ],
+    extensions=[],
+    nested_types=[],
+    enum_types=[],
+    serialized_options=None,
+    is_extendable=False,
+    syntax="proto3",
+    extension_ranges=[],
+    oneofs=[],
+    serialized_start=303,
+    serialized_end=378,
 )
 
 
 _POSEESTIMATIONRESULT = _descriptor.Descriptor(
-  name='PoseEstimationResult',
-  full_name='poses.PoseEstimationResult',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='poseEstimations', full_name='poses.PoseEstimationResult.poseEstimations', index=0,
-      number=101, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=380,
-  serialized_end=456,
+    name="PoseEstimationResult",
+    full_name="poses.PoseEstimationResult",
+    filename=None,
+    file=DESCRIPTOR,
+    containing_type=None,
+    fields=[
+        _descriptor.FieldDescriptor(
+            name="poseEstimations",
+            full_name="poses.PoseEstimationResult.poseEstimations",
+            index=0,
+            number=101,
+            type=11,
+            cpp_type=10,
+            label=1,
+            has_default_value=False,
+            default_value=None,
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=None,
+            file=DESCRIPTOR,
+        )
+    ],
+    extensions=[],
+    nested_types=[],
+    enum_types=[],
+    serialized_options=None,
+    is_extendable=False,
+    syntax="proto3",
+    extension_ranges=[],
+    oneofs=[],
+    serialized_start=380,
+    serialized_end=456,
 )
 
 
 _MOVEDTO = _descriptor.Descriptor(
-  name='MoveDTO',
-  full_name='poses.MoveDTO',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='transformCurves', full_name='poses.MoveDTO.transformCurves', index=0,
-      number=1, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='length', full_name='poses.MoveDTO.length', index=1,
-      number=2, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=float(0),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=458,
-  serialized_end=535,
+    name="MoveDTO",
+    full_name="poses.MoveDTO",
+    filename=None,
+    file=DESCRIPTOR,
+    containing_type=None,
+    fields=[
+        _descriptor.FieldDescriptor(
+            name="transformCurves",
+            full_name="poses.MoveDTO.transformCurves",
+            index=0,
+            number=1,
+            type=11,
+            cpp_type=10,
+            label=3,
+            has_default_value=False,
+            default_value=[],
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=None,
+            file=DESCRIPTOR,
+        ),
+        _descriptor.FieldDescriptor(
+            name="length",
+            full_name="poses.MoveDTO.length",
+            index=1,
+            number=2,
+            type=2,
+            cpp_type=6,
+            label=1,
+            has_default_value=False,
+            default_value=float(0),
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=None,
+            file=DESCRIPTOR,
+        ),
+    ],
+    extensions=[],
+    nested_types=[],
+    enum_types=[],
+    serialized_options=None,
+    is_extendable=False,
+    syntax="proto3",
+    extension_ranges=[],
+    oneofs=[],
+    serialized_start=458,
+    serialized_end=535,
 )
 
 
 _TRANSFORMCURVESDTO = _descriptor.Descriptor(
-  name='TransformCurvesDTO',
-  full_name='poses.TransformCurvesDTO',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='transformPath', full_name='poses.TransformCurvesDTO.transformPath', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='positionCurves', full_name='poses.TransformCurvesDTO.positionCurves', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='rotationCurves', full_name='poses.TransformCurvesDTO.rotationCurves', index=2,
-      number=3, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=538,
-  serialized_end=682,
+    name="TransformCurvesDTO",
+    full_name="poses.TransformCurvesDTO",
+    filename=None,
+    file=DESCRIPTOR,
+    containing_type=None,
+    fields=[
+        _descriptor.FieldDescriptor(
+            name="transformPath",
+            full_name="poses.TransformCurvesDTO.transformPath",
+            index=0,
+            number=1,
+            type=9,
+            cpp_type=9,
+            label=1,
+            has_default_value=False,
+            default_value=b"".decode("utf-8"),
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=None,
+            file=DESCRIPTOR,
+        ),
+        _descriptor.FieldDescriptor(
+            name="positionCurves",
+            full_name="poses.TransformCurvesDTO.positionCurves",
+            index=1,
+            number=2,
+            type=11,
+            cpp_type=10,
+            label=1,
+            has_default_value=False,
+            default_value=None,
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=None,
+            file=DESCRIPTOR,
+        ),
+        _descriptor.FieldDescriptor(
+            name="rotationCurves",
+            full_name="poses.TransformCurvesDTO.rotationCurves",
+            index=2,
+            number=3,
+            type=11,
+            cpp_type=10,
+            label=1,
+            has_default_value=False,
+            default_value=None,
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=None,
+            file=DESCRIPTOR,
+        ),
+    ],
+    extensions=[],
+    nested_types=[],
+    enum_types=[],
+    serialized_options=None,
+    is_extendable=False,
+    syntax="proto3",
+    extension_ranges=[],
+    oneofs=[],
+    serialized_start=538,
+    serialized_end=682,
 )
 
 
 _VECTOR3CURVESDTO = _descriptor.Descriptor(
-  name='Vector3CurvesDTO',
-  full_name='poses.Vector3CurvesDTO',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='x', full_name='poses.Vector3CurvesDTO.x', index=0,
-      number=1, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='y', full_name='poses.Vector3CurvesDTO.y', index=1,
-      number=2, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='z', full_name='poses.Vector3CurvesDTO.z', index=2,
-      number=3, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=684,
-  serialized_end=795,
+    name="Vector3CurvesDTO",
+    full_name="poses.Vector3CurvesDTO",
+    filename=None,
+    file=DESCRIPTOR,
+    containing_type=None,
+    fields=[
+        _descriptor.FieldDescriptor(
+            name="x",
+            full_name="poses.Vector3CurvesDTO.x",
+            index=0,
+            number=1,
+            type=11,
+            cpp_type=10,
+            label=3,
+            has_default_value=False,
+            default_value=[],
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=None,
+            file=DESCRIPTOR,
+        ),
+        _descriptor.FieldDescriptor(
+            name="y",
+            full_name="poses.Vector3CurvesDTO.y",
+            index=1,
+            number=2,
+            type=11,
+            cpp_type=10,
+            label=3,
+            has_default_value=False,
+            default_value=[],
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=None,
+            file=DESCRIPTOR,
+        ),
+        _descriptor.FieldDescriptor(
+            name="z",
+            full_name="poses.Vector3CurvesDTO.z",
+            index=2,
+            number=3,
+            type=11,
+            cpp_type=10,
+            label=3,
+            has_default_value=False,
+            default_value=[],
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=None,
+            file=DESCRIPTOR,
+        ),
+    ],
+    extensions=[],
+    nested_types=[],
+    enum_types=[],
+    serialized_options=None,
+    is_extendable=False,
+    syntax="proto3",
+    extension_ranges=[],
+    oneofs=[],
+    serialized_start=684,
+    serialized_end=795,
 )
 
 
 _QUATERNIONCURVESDTO = _descriptor.Descriptor(
-  name='QuaternionCurvesDTO',
-  full_name='poses.QuaternionCurvesDTO',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='x', full_name='poses.QuaternionCurvesDTO.x', index=0,
-      number=1, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='y', full_name='poses.QuaternionCurvesDTO.y', index=1,
-      number=2, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='z', full_name='poses.QuaternionCurvesDTO.z', index=2,
-      number=3, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='w', full_name='poses.QuaternionCurvesDTO.w', index=3,
-      number=4, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=798,
-  serialized_end=943,
+    name="QuaternionCurvesDTO",
+    full_name="poses.QuaternionCurvesDTO",
+    filename=None,
+    file=DESCRIPTOR,
+    containing_type=None,
+    fields=[
+        _descriptor.FieldDescriptor(
+            name="x",
+            full_name="poses.QuaternionCurvesDTO.x",
+            index=0,
+            number=1,
+            type=11,
+            cpp_type=10,
+            label=3,
+            has_default_value=False,
+            default_value=[],
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=None,
+            file=DESCRIPTOR,
+        ),
+        _descriptor.FieldDescriptor(
+            name="y",
+            full_name="poses.QuaternionCurvesDTO.y",
+            index=1,
+            number=2,
+            type=11,
+            cpp_type=10,
+            label=3,
+            has_default_value=False,
+            default_value=[],
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=None,
+            file=DESCRIPTOR,
+        ),
+        _descriptor.FieldDescriptor(
+            name="z",
+            full_name="poses.QuaternionCurvesDTO.z",
+            index=2,
+            number=3,
+            type=11,
+            cpp_type=10,
+            label=3,
+            has_default_value=False,
+            default_value=[],
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=None,
+            file=DESCRIPTOR,
+        ),
+        _descriptor.FieldDescriptor(
+            name="w",
+            full_name="poses.QuaternionCurvesDTO.w",
+            index=3,
+            number=4,
+            type=11,
+            cpp_type=10,
+            label=3,
+            has_default_value=False,
+            default_value=[],
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=None,
+            file=DESCRIPTOR,
+        ),
+    ],
+    extensions=[],
+    nested_types=[],
+    enum_types=[],
+    serialized_options=None,
+    is_extendable=False,
+    syntax="proto3",
+    extension_ranges=[],
+    oneofs=[],
+    serialized_start=798,
+    serialized_end=943,
 )
 
 
 _TRANSFORMPOSEDTO = _descriptor.Descriptor(
-  name='TransformPoseDTO',
-  full_name='poses.TransformPoseDTO',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='transformPath', full_name='poses.TransformPoseDTO.transformPath', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='pos', full_name='poses.TransformPoseDTO.pos', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='rot', full_name='poses.TransformPoseDTO.rot', index=2,
-      number=3, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=945,
-  serialized_end=1050,
+    name="TransformPoseDTO",
+    full_name="poses.TransformPoseDTO",
+    filename=None,
+    file=DESCRIPTOR,
+    containing_type=None,
+    fields=[
+        _descriptor.FieldDescriptor(
+            name="transformPath",
+            full_name="poses.TransformPoseDTO.transformPath",
+            index=0,
+            number=1,
+            type=9,
+            cpp_type=9,
+            label=1,
+            has_default_value=False,
+            default_value=b"".decode("utf-8"),
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=None,
+            file=DESCRIPTOR,
+        ),
+        _descriptor.FieldDescriptor(
+            name="pos",
+            full_name="poses.TransformPoseDTO.pos",
+            index=1,
+            number=2,
+            type=11,
+            cpp_type=10,
+            label=1,
+            has_default_value=False,
+            default_value=None,
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=None,
+            file=DESCRIPTOR,
+        ),
+        _descriptor.FieldDescriptor(
+            name="rot",
+            full_name="poses.TransformPoseDTO.rot",
+            index=2,
+            number=3,
+            type=11,
+            cpp_type=10,
+            label=1,
+            has_default_value=False,
+            default_value=None,
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=None,
+            file=DESCRIPTOR,
+        ),
+    ],
+    extensions=[],
+    nested_types=[],
+    enum_types=[],
+    serialized_options=None,
+    is_extendable=False,
+    syntax="proto3",
+    extension_ranges=[],
+    oneofs=[],
+    serialized_start=945,
+    serialized_end=1050,
 )
 
 
 _POSEDTO = _descriptor.Descriptor(
-  name='PoseDTO',
-  full_name='poses.PoseDTO',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='transforms', full_name='poses.PoseDTO.transforms', index=0,
-      number=1, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1052,
-  serialized_end=1106,
+    name="PoseDTO",
+    full_name="poses.PoseDTO",
+    filename=None,
+    file=DESCRIPTOR,
+    containing_type=None,
+    fields=[
+        _descriptor.FieldDescriptor(
+            name="transforms",
+            full_name="poses.PoseDTO.transforms",
+            index=0,
+            number=1,
+            type=11,
+            cpp_type=10,
+            label=3,
+            has_default_value=False,
+            default_value=[],
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=None,
+            file=DESCRIPTOR,
+        )
+    ],
+    extensions=[],
+    nested_types=[],
+    enum_types=[],
+    serialized_options=None,
+    is_extendable=False,
+    syntax="proto3",
+    extension_ranges=[],
+    oneofs=[],
+    serialized_start=1052,
+    serialized_end=1106,
 )
 
 
 _ANIMATABLEPOSEDTO = _descriptor.Descriptor(
-  name='AnimatablePoseDTO',
-  full_name='poses.AnimatablePoseDTO',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='bones', full_name='poses.AnimatablePoseDTO.bones', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='controls', full_name='poses.AnimatablePoseDTO.controls', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1108,
-  serialized_end=1192,
+    name="AnimatablePoseDTO",
+    full_name="poses.AnimatablePoseDTO",
+    filename=None,
+    file=DESCRIPTOR,
+    containing_type=None,
+    fields=[
+        _descriptor.FieldDescriptor(
+            name="bones",
+            full_name="poses.AnimatablePoseDTO.bones",
+            index=0,
+            number=1,
+            type=11,
+            cpp_type=10,
+            label=1,
+            has_default_value=False,
+            default_value=None,
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=None,
+            file=DESCRIPTOR,
+        ),
+        _descriptor.FieldDescriptor(
+            name="controls",
+            full_name="poses.AnimatablePoseDTO.controls",
+            index=1,
+            number=2,
+            type=11,
+            cpp_type=10,
+            label=1,
+            has_default_value=False,
+            default_value=None,
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=None,
+            file=DESCRIPTOR,
+        ),
+    ],
+    extensions=[],
+    nested_types=[],
+    enum_types=[],
+    serialized_options=None,
+    is_extendable=False,
+    syntax="proto3",
+    extension_ranges=[],
+    oneofs=[],
+    serialized_start=1108,
+    serialized_end=1192,
 )
 
 
 _EDITORMOVEPOSEDTO = _descriptor.Descriptor(
-  name='EditorMovePoseDTO',
-  full_name='poses.EditorMovePoseDTO',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='frame', full_name='poses.EditorMovePoseDTO.frame', index=0,
-      number=1, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='pose', full_name='poses.EditorMovePoseDTO.pose', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1194,
-  serialized_end=1258,
+    name="EditorMovePoseDTO",
+    full_name="poses.EditorMovePoseDTO",
+    filename=None,
+    file=DESCRIPTOR,
+    containing_type=None,
+    fields=[
+        _descriptor.FieldDescriptor(
+            name="frame",
+            full_name="poses.EditorMovePoseDTO.frame",
+            index=0,
+            number=1,
+            type=5,
+            cpp_type=1,
+            label=1,
+            has_default_value=False,
+            default_value=0,
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=None,
+            file=DESCRIPTOR,
+        ),
+        _descriptor.FieldDescriptor(
+            name="pose",
+            full_name="poses.EditorMovePoseDTO.pose",
+            index=1,
+            number=2,
+            type=11,
+            cpp_type=10,
+            label=1,
+            has_default_value=False,
+            default_value=None,
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=None,
+            file=DESCRIPTOR,
+        ),
+    ],
+    extensions=[],
+    nested_types=[],
+    enum_types=[],
+    serialized_options=None,
+    is_extendable=False,
+    syntax="proto3",
+    extension_ranges=[],
+    oneofs=[],
+    serialized_start=1194,
+    serialized_end=1258,
 )
 
 
 _EDITORMOVEMETADTO = _descriptor.Descriptor(
-  name='EditorMoveMetaDTO',
-  full_name='poses.EditorMoveMetaDTO',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='framesPerSecond', full_name='poses.EditorMoveMetaDTO.framesPerSecond', index=0,
-      number=1, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='framesTotal', full_name='poses.EditorMoveMetaDTO.framesTotal', index=1,
-      number=2, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1260,
-  serialized_end=1325,
+    name="EditorMoveMetaDTO",
+    full_name="poses.EditorMoveMetaDTO",
+    filename=None,
+    file=DESCRIPTOR,
+    containing_type=None,
+    fields=[
+        _descriptor.FieldDescriptor(
+            name="framesPerSecond",
+            full_name="poses.EditorMoveMetaDTO.framesPerSecond",
+            index=0,
+            number=1,
+            type=5,
+            cpp_type=1,
+            label=1,
+            has_default_value=False,
+            default_value=0,
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=None,
+            file=DESCRIPTOR,
+        ),
+        _descriptor.FieldDescriptor(
+            name="framesTotal",
+            full_name="poses.EditorMoveMetaDTO.framesTotal",
+            index=1,
+            number=2,
+            type=5,
+            cpp_type=1,
+            label=1,
+            has_default_value=False,
+            default_value=0,
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=None,
+            file=DESCRIPTOR,
+        ),
+    ],
+    extensions=[],
+    nested_types=[],
+    enum_types=[],
+    serialized_options=None,
+    is_extendable=False,
+    syntax="proto3",
+    extension_ranges=[],
+    oneofs=[],
+    serialized_start=1260,
+    serialized_end=1325,
 )
 
 
 _EDITORMOVEDTO = _descriptor.Descriptor(
-  name='EditorMoveDTO',
-  full_name='poses.EditorMoveDTO',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='metadata', full_name='poses.EditorMoveDTO.metadata', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='poses', full_name='poses.EditorMoveDTO.poses', index=1,
-      number=2, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1327,
-  serialized_end=1427,
+    name="EditorMoveDTO",
+    full_name="poses.EditorMoveDTO",
+    filename=None,
+    file=DESCRIPTOR,
+    containing_type=None,
+    fields=[
+        _descriptor.FieldDescriptor(
+            name="metadata",
+            full_name="poses.EditorMoveDTO.metadata",
+            index=0,
+            number=1,
+            type=11,
+            cpp_type=10,
+            label=1,
+            has_default_value=False,
+            default_value=None,
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=None,
+            file=DESCRIPTOR,
+        ),
+        _descriptor.FieldDescriptor(
+            name="poses",
+            full_name="poses.EditorMoveDTO.poses",
+            index=1,
+            number=2,
+            type=11,
+            cpp_type=10,
+            label=3,
+            has_default_value=False,
+            default_value=[],
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=None,
+            file=DESCRIPTOR,
+        ),
+    ],
+    extensions=[],
+    nested_types=[],
+    enum_types=[],
+    serialized_options=None,
+    is_extendable=False,
+    syntax="proto3",
+    extension_ranges=[],
+    oneofs=[],
+    serialized_start=1327,
+    serialized_end=1427,
 )
 
-_KEYPOINTESTIMATIONFRAMES.fields_by_name['frames'].message_type = _KEYPOINTESTIMATION
-_POSEESTIMATIONFRAMES.fields_by_name['keypoints'].message_type = _KEYPOINTESTIMATIONFRAMES
-_POSEESTIMATIONRESULT.fields_by_name['poseEstimations'].message_type = _POSEESTIMATIONFRAMES
-_MOVEDTO.fields_by_name['transformCurves'].message_type = _TRANSFORMCURVESDTO
-_TRANSFORMCURVESDTO.fields_by_name['positionCurves'].message_type = _VECTOR3CURVESDTO
-_TRANSFORMCURVESDTO.fields_by_name['rotationCurves'].message_type = _QUATERNIONCURVESDTO
-_VECTOR3CURVESDTO.fields_by_name['x'].message_type = _KEYFRAMEDTO
-_VECTOR3CURVESDTO.fields_by_name['y'].message_type = _KEYFRAMEDTO
-_VECTOR3CURVESDTO.fields_by_name['z'].message_type = _KEYFRAMEDTO
-_QUATERNIONCURVESDTO.fields_by_name['x'].message_type = _KEYFRAMEDTO
-_QUATERNIONCURVESDTO.fields_by_name['y'].message_type = _KEYFRAMEDTO
-_QUATERNIONCURVESDTO.fields_by_name['z'].message_type = _KEYFRAMEDTO
-_QUATERNIONCURVESDTO.fields_by_name['w'].message_type = _KEYFRAMEDTO
-_TRANSFORMPOSEDTO.fields_by_name['pos'].message_type = _VECTOR3DTO
-_TRANSFORMPOSEDTO.fields_by_name['rot'].message_type = _VECTOR3DTO
-_POSEDTO.fields_by_name['transforms'].message_type = _TRANSFORMPOSEDTO
-_ANIMATABLEPOSEDTO.fields_by_name['bones'].message_type = _POSEDTO
-_ANIMATABLEPOSEDTO.fields_by_name['controls'].message_type = _POSEDTO
-_EDITORMOVEPOSEDTO.fields_by_name['pose'].message_type = _POSEDTO
-_EDITORMOVEDTO.fields_by_name['metadata'].message_type = _EDITORMOVEMETADTO
-_EDITORMOVEDTO.fields_by_name['poses'].message_type = _EDITORMOVEPOSEDTO
-DESCRIPTOR.message_types_by_name['Vector3DTO'] = _VECTOR3DTO
-DESCRIPTOR.message_types_by_name['KeyframeDTO'] = _KEYFRAMEDTO
-DESCRIPTOR.message_types_by_name['KeypointEstimation'] = _KEYPOINTESTIMATION
-DESCRIPTOR.message_types_by_name['KeypointEstimationFrames'] = _KEYPOINTESTIMATIONFRAMES
-DESCRIPTOR.message_types_by_name['PoseEstimationFrames'] = _POSEESTIMATIONFRAMES
-DESCRIPTOR.message_types_by_name['PoseEstimationResult'] = _POSEESTIMATIONRESULT
-DESCRIPTOR.message_types_by_name['MoveDTO'] = _MOVEDTO
-DESCRIPTOR.message_types_by_name['TransformCurvesDTO'] = _TRANSFORMCURVESDTO
-DESCRIPTOR.message_types_by_name['Vector3CurvesDTO'] = _VECTOR3CURVESDTO
-DESCRIPTOR.message_types_by_name['QuaternionCurvesDTO'] = _QUATERNIONCURVESDTO
-DESCRIPTOR.message_types_by_name['TransformPoseDTO'] = _TRANSFORMPOSEDTO
-DESCRIPTOR.message_types_by_name['PoseDTO'] = _POSEDTO
-DESCRIPTOR.message_types_by_name['AnimatablePoseDTO'] = _ANIMATABLEPOSEDTO
-DESCRIPTOR.message_types_by_name['EditorMovePoseDTO'] = _EDITORMOVEPOSEDTO
-DESCRIPTOR.message_types_by_name['EditorMoveMetaDTO'] = _EDITORMOVEMETADTO
-DESCRIPTOR.message_types_by_name['EditorMoveDTO'] = _EDITORMOVEDTO
+_KEYPOINTESTIMATIONFRAMES.fields_by_name["frames"].message_type = _KEYPOINTESTIMATION
+_POSEESTIMATIONFRAMES.fields_by_name[
+    "keypoints"
+].message_type = _KEYPOINTESTIMATIONFRAMES
+_POSEESTIMATIONRESULT.fields_by_name[
+    "poseEstimations"
+].message_type = _POSEESTIMATIONFRAMES
+_MOVEDTO.fields_by_name["transformCurves"].message_type = _TRANSFORMCURVESDTO
+_TRANSFORMCURVESDTO.fields_by_name["positionCurves"].message_type = _VECTOR3CURVESDTO
+_TRANSFORMCURVESDTO.fields_by_name["rotationCurves"].message_type = _QUATERNIONCURVESDTO
+_VECTOR3CURVESDTO.fields_by_name["x"].message_type = _KEYFRAMEDTO
+_VECTOR3CURVESDTO.fields_by_name["y"].message_type = _KEYFRAMEDTO
+_VECTOR3CURVESDTO.fields_by_name["z"].message_type = _KEYFRAMEDTO
+_QUATERNIONCURVESDTO.fields_by_name["x"].message_type = _KEYFRAMEDTO
+_QUATERNIONCURVESDTO.fields_by_name["y"].message_type = _KEYFRAMEDTO
+_QUATERNIONCURVESDTO.fields_by_name["z"].message_type = _KEYFRAMEDTO
+_QUATERNIONCURVESDTO.fields_by_name["w"].message_type = _KEYFRAMEDTO
+_TRANSFORMPOSEDTO.fields_by_name["pos"].message_type = _VECTOR3DTO
+_TRANSFORMPOSEDTO.fields_by_name["rot"].message_type = _VECTOR3DTO
+_POSEDTO.fields_by_name["transforms"].message_type = _TRANSFORMPOSEDTO
+_ANIMATABLEPOSEDTO.fields_by_name["bones"].message_type = _POSEDTO
+_ANIMATABLEPOSEDTO.fields_by_name["controls"].message_type = _POSEDTO
+_EDITORMOVEPOSEDTO.fields_by_name["pose"].message_type = _POSEDTO
+_EDITORMOVEDTO.fields_by_name["metadata"].message_type = _EDITORMOVEMETADTO
+_EDITORMOVEDTO.fields_by_name["poses"].message_type = _EDITORMOVEPOSEDTO
+DESCRIPTOR.message_types_by_name["Vector3DTO"] = _VECTOR3DTO
+DESCRIPTOR.message_types_by_name["KeyframeDTO"] = _KEYFRAMEDTO
+DESCRIPTOR.message_types_by_name["KeypointEstimation"] = _KEYPOINTESTIMATION
+DESCRIPTOR.message_types_by_name["KeypointEstimationFrames"] = _KEYPOINTESTIMATIONFRAMES
+DESCRIPTOR.message_types_by_name["PoseEstimationFrames"] = _POSEESTIMATIONFRAMES
+DESCRIPTOR.message_types_by_name["PoseEstimationResult"] = _POSEESTIMATIONRESULT
+DESCRIPTOR.message_types_by_name["MoveDTO"] = _MOVEDTO
+DESCRIPTOR.message_types_by_name["TransformCurvesDTO"] = _TRANSFORMCURVESDTO
+DESCRIPTOR.message_types_by_name["Vector3CurvesDTO"] = _VECTOR3CURVESDTO
+DESCRIPTOR.message_types_by_name["QuaternionCurvesDTO"] = _QUATERNIONCURVESDTO
+DESCRIPTOR.message_types_by_name["TransformPoseDTO"] = _TRANSFORMPOSEDTO
+DESCRIPTOR.message_types_by_name["PoseDTO"] = _POSEDTO
+DESCRIPTOR.message_types_by_name["AnimatablePoseDTO"] = _ANIMATABLEPOSEDTO
+DESCRIPTOR.message_types_by_name["EditorMovePoseDTO"] = _EDITORMOVEPOSEDTO
+DESCRIPTOR.message_types_by_name["EditorMoveMetaDTO"] = _EDITORMOVEMETADTO
+DESCRIPTOR.message_types_by_name["EditorMoveDTO"] = _EDITORMOVEDTO
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
-Vector3DTO = _reflection.GeneratedProtocolMessageType('Vector3DTO', (_message.Message,), {
-  'DESCRIPTOR' : _VECTOR3DTO,
-  '__module__' : 'poses_pb2'
-  # @@protoc_insertion_point(class_scope:poses.Vector3DTO)
-  })
+Vector3DTO = _reflection.GeneratedProtocolMessageType(
+    "Vector3DTO",
+    (_message.Message,),
+    {
+        "DESCRIPTOR": _VECTOR3DTO,
+        "__module__": "poses_pb2"
+        # @@protoc_insertion_point(class_scope:poses.Vector3DTO)
+    },
+)
 _sym_db.RegisterMessage(Vector3DTO)
 
-KeyframeDTO = _reflection.GeneratedProtocolMessageType('KeyframeDTO', (_message.Message,), {
-  'DESCRIPTOR' : _KEYFRAMEDTO,
-  '__module__' : 'poses_pb2'
-  # @@protoc_insertion_point(class_scope:poses.KeyframeDTO)
-  })
+KeyframeDTO = _reflection.GeneratedProtocolMessageType(
+    "KeyframeDTO",
+    (_message.Message,),
+    {
+        "DESCRIPTOR": _KEYFRAMEDTO,
+        "__module__": "poses_pb2"
+        # @@protoc_insertion_point(class_scope:poses.KeyframeDTO)
+    },
+)
 _sym_db.RegisterMessage(KeyframeDTO)
 
-KeypointEstimation = _reflection.GeneratedProtocolMessageType('KeypointEstimation', (_message.Message,), {
-  'DESCRIPTOR' : _KEYPOINTESTIMATION,
-  '__module__' : 'poses_pb2'
-  # @@protoc_insertion_point(class_scope:poses.KeypointEstimation)
-  })
+KeypointEstimation = _reflection.GeneratedProtocolMessageType(
+    "KeypointEstimation",
+    (_message.Message,),
+    {
+        "DESCRIPTOR": _KEYPOINTESTIMATION,
+        "__module__": "poses_pb2"
+        # @@protoc_insertion_point(class_scope:poses.KeypointEstimation)
+    },
+)
 _sym_db.RegisterMessage(KeypointEstimation)
 
-KeypointEstimationFrames = _reflection.GeneratedProtocolMessageType('KeypointEstimationFrames', (_message.Message,), {
-  'DESCRIPTOR' : _KEYPOINTESTIMATIONFRAMES,
-  '__module__' : 'poses_pb2'
-  # @@protoc_insertion_point(class_scope:poses.KeypointEstimationFrames)
-  })
+KeypointEstimationFrames = _reflection.GeneratedProtocolMessageType(
+    "KeypointEstimationFrames",
+    (_message.Message,),
+    {
+        "DESCRIPTOR": _KEYPOINTESTIMATIONFRAMES,
+        "__module__": "poses_pb2"
+        # @@protoc_insertion_point(class_scope:poses.KeypointEstimationFrames)
+    },
+)
 _sym_db.RegisterMessage(KeypointEstimationFrames)
 
-PoseEstimationFrames = _reflection.GeneratedProtocolMessageType('PoseEstimationFrames', (_message.Message,), {
-  'DESCRIPTOR' : _POSEESTIMATIONFRAMES,
-  '__module__' : 'poses_pb2'
-  # @@protoc_insertion_point(class_scope:poses.PoseEstimationFrames)
-  })
+PoseEstimationFrames = _reflection.GeneratedProtocolMessageType(
+    "PoseEstimationFrames",
+    (_message.Message,),
+    {
+        "DESCRIPTOR": _POSEESTIMATIONFRAMES,
+        "__module__": "poses_pb2"
+        # @@protoc_insertion_point(class_scope:poses.PoseEstimationFrames)
+    },
+)
 _sym_db.RegisterMessage(PoseEstimationFrames)
 
-PoseEstimationResult = _reflection.GeneratedProtocolMessageType('PoseEstimationResult', (_message.Message,), {
-  'DESCRIPTOR' : _POSEESTIMATIONRESULT,
-  '__module__' : 'poses_pb2'
-  # @@protoc_insertion_point(class_scope:poses.PoseEstimationResult)
-  })
+PoseEstimationResult = _reflection.GeneratedProtocolMessageType(
+    "PoseEstimationResult",
+    (_message.Message,),
+    {
+        "DESCRIPTOR": _POSEESTIMATIONRESULT,
+        "__module__": "poses_pb2"
+        # @@protoc_insertion_point(class_scope:poses.PoseEstimationResult)
+    },
+)
 _sym_db.RegisterMessage(PoseEstimationResult)
 
-MoveDTO = _reflection.GeneratedProtocolMessageType('MoveDTO', (_message.Message,), {
-  'DESCRIPTOR' : _MOVEDTO,
-  '__module__' : 'poses_pb2'
-  # @@protoc_insertion_point(class_scope:poses.MoveDTO)
-  })
+MoveDTO = _reflection.GeneratedProtocolMessageType(
+    "MoveDTO",
+    (_message.Message,),
+    {
+        "DESCRIPTOR": _MOVEDTO,
+        "__module__": "poses_pb2"
+        # @@protoc_insertion_point(class_scope:poses.MoveDTO)
+    },
+)
 _sym_db.RegisterMessage(MoveDTO)
 
-TransformCurvesDTO = _reflection.GeneratedProtocolMessageType('TransformCurvesDTO', (_message.Message,), {
-  'DESCRIPTOR' : _TRANSFORMCURVESDTO,
-  '__module__' : 'poses_pb2'
-  # @@protoc_insertion_point(class_scope:poses.TransformCurvesDTO)
-  })
+TransformCurvesDTO = _reflection.GeneratedProtocolMessageType(
+    "TransformCurvesDTO",
+    (_message.Message,),
+    {
+        "DESCRIPTOR": _TRANSFORMCURVESDTO,
+        "__module__": "poses_pb2"
+        # @@protoc_insertion_point(class_scope:poses.TransformCurvesDTO)
+    },
+)
 _sym_db.RegisterMessage(TransformCurvesDTO)
 
-Vector3CurvesDTO = _reflection.GeneratedProtocolMessageType('Vector3CurvesDTO', (_message.Message,), {
-  'DESCRIPTOR' : _VECTOR3CURVESDTO,
-  '__module__' : 'poses_pb2'
-  # @@protoc_insertion_point(class_scope:poses.Vector3CurvesDTO)
-  })
+Vector3CurvesDTO = _reflection.GeneratedProtocolMessageType(
+    "Vector3CurvesDTO",
+    (_message.Message,),
+    {
+        "DESCRIPTOR": _VECTOR3CURVESDTO,
+        "__module__": "poses_pb2"
+        # @@protoc_insertion_point(class_scope:poses.Vector3CurvesDTO)
+    },
+)
 _sym_db.RegisterMessage(Vector3CurvesDTO)
 
-QuaternionCurvesDTO = _reflection.GeneratedProtocolMessageType('QuaternionCurvesDTO', (_message.Message,), {
-  'DESCRIPTOR' : _QUATERNIONCURVESDTO,
-  '__module__' : 'poses_pb2'
-  # @@protoc_insertion_point(class_scope:poses.QuaternionCurvesDTO)
-  })
+QuaternionCurvesDTO = _reflection.GeneratedProtocolMessageType(
+    "QuaternionCurvesDTO",
+    (_message.Message,),
+    {
+        "DESCRIPTOR": _QUATERNIONCURVESDTO,
+        "__module__": "poses_pb2"
+        # @@protoc_insertion_point(class_scope:poses.QuaternionCurvesDTO)
+    },
+)
 _sym_db.RegisterMessage(QuaternionCurvesDTO)
 
-TransformPoseDTO = _reflection.GeneratedProtocolMessageType('TransformPoseDTO', (_message.Message,), {
-  'DESCRIPTOR' : _TRANSFORMPOSEDTO,
-  '__module__' : 'poses_pb2'
-  # @@protoc_insertion_point(class_scope:poses.TransformPoseDTO)
-  })
+TransformPoseDTO = _reflection.GeneratedProtocolMessageType(
+    "TransformPoseDTO",
+    (_message.Message,),
+    {
+        "DESCRIPTOR": _TRANSFORMPOSEDTO,
+        "__module__": "poses_pb2"
+        # @@protoc_insertion_point(class_scope:poses.TransformPoseDTO)
+    },
+)
 _sym_db.RegisterMessage(TransformPoseDTO)
 
-PoseDTO = _reflection.GeneratedProtocolMessageType('PoseDTO', (_message.Message,), {
-  'DESCRIPTOR' : _POSEDTO,
-  '__module__' : 'poses_pb2'
-  # @@protoc_insertion_point(class_scope:poses.PoseDTO)
-  })
+PoseDTO = _reflection.GeneratedProtocolMessageType(
+    "PoseDTO",
+    (_message.Message,),
+    {
+        "DESCRIPTOR": _POSEDTO,
+        "__module__": "poses_pb2"
+        # @@protoc_insertion_point(class_scope:poses.PoseDTO)
+    },
+)
 _sym_db.RegisterMessage(PoseDTO)
 
-AnimatablePoseDTO = _reflection.GeneratedProtocolMessageType('AnimatablePoseDTO', (_message.Message,), {
-  'DESCRIPTOR' : _ANIMATABLEPOSEDTO,
-  '__module__' : 'poses_pb2'
-  # @@protoc_insertion_point(class_scope:poses.AnimatablePoseDTO)
-  })
+AnimatablePoseDTO = _reflection.GeneratedProtocolMessageType(
+    "AnimatablePoseDTO",
+    (_message.Message,),
+    {
+        "DESCRIPTOR": _ANIMATABLEPOSEDTO,
+        "__module__": "poses_pb2"
+        # @@protoc_insertion_point(class_scope:poses.AnimatablePoseDTO)
+    },
+)
 _sym_db.RegisterMessage(AnimatablePoseDTO)
 
-EditorMovePoseDTO = _reflection.GeneratedProtocolMessageType('EditorMovePoseDTO', (_message.Message,), {
-  'DESCRIPTOR' : _EDITORMOVEPOSEDTO,
-  '__module__' : 'poses_pb2'
-  # @@protoc_insertion_point(class_scope:poses.EditorMovePoseDTO)
-  })
+EditorMovePoseDTO = _reflection.GeneratedProtocolMessageType(
+    "EditorMovePoseDTO",
+    (_message.Message,),
+    {
+        "DESCRIPTOR": _EDITORMOVEPOSEDTO,
+        "__module__": "poses_pb2"
+        # @@protoc_insertion_point(class_scope:poses.EditorMovePoseDTO)
+    },
+)
 _sym_db.RegisterMessage(EditorMovePoseDTO)
 
-EditorMoveMetaDTO = _reflection.GeneratedProtocolMessageType('EditorMoveMetaDTO', (_message.Message,), {
-  'DESCRIPTOR' : _EDITORMOVEMETADTO,
-  '__module__' : 'poses_pb2'
-  # @@protoc_insertion_point(class_scope:poses.EditorMoveMetaDTO)
-  })
+EditorMoveMetaDTO = _reflection.GeneratedProtocolMessageType(
+    "EditorMoveMetaDTO",
+    (_message.Message,),
+    {
+        "DESCRIPTOR": _EDITORMOVEMETADTO,
+        "__module__": "poses_pb2"
+        # @@protoc_insertion_point(class_scope:poses.EditorMoveMetaDTO)
+    },
+)
 _sym_db.RegisterMessage(EditorMoveMetaDTO)
 
-EditorMoveDTO = _reflection.GeneratedProtocolMessageType('EditorMoveDTO', (_message.Message,), {
-  'DESCRIPTOR' : _EDITORMOVEDTO,
-  '__module__' : 'poses_pb2'
-  # @@protoc_insertion_point(class_scope:poses.EditorMoveDTO)
-  })
+EditorMoveDTO = _reflection.GeneratedProtocolMessageType(
+    "EditorMoveDTO",
+    (_message.Message,),
+    {
+        "DESCRIPTOR": _EDITORMOVEDTO,
+        "__module__": "poses_pb2"
+        # @@protoc_insertion_point(class_scope:poses.EditorMoveDTO)
+    },
+)
 _sym_db.RegisterMessage(EditorMoveDTO)
 
 
