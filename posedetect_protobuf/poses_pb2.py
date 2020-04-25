@@ -18,7 +18,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='poses',
   syntax='proto3',
   serialized_options=b'\252\002\020Polaris.Protobuf',
-  serialized_pb=b'\n\x0bposes.proto\x12\x05poses\"-\n\nVector3DTO\x12\t\n\x01x\x18\x01 \x01(\x02\x12\t\n\x01y\x18\x02 \x01(\x02\x12\t\n\x01z\x18\x03 \x01(\x02\"Q\n\x0bKeyframeDTO\x12\x0c\n\x04time\x18\x01 \x01(\x02\x12\r\n\x05value\x18\x02 \x01(\x02\x12\x11\n\tinTangent\x18\x03 \x01(\x02\x12\x12\n\noutTangent\x18\x04 \x01(\x02\"A\n\x12KeypointEstimation\x12\t\n\x01x\x18\x65 \x01(\x02\x12\t\n\x01y\x18\x66 \x01(\x02\x12\t\n\x01z\x18g \x01(\x02\x12\n\n\x01p\x18\xc9\x01 \x01(\x02\"R\n\x18KeypointEstimationFrames\x12\n\n\x02id\x18\x65 \x01(\t\x12*\n\x06\x66rames\x18\xc9\x01 \x03(\x0b\x32\x19.poses.KeypointEstimation\"K\n\x14PoseEstimationFrames\x12\x33\n\tkeypoints\x18\xc9\x01 \x03(\x0b\x32\x1f.poses.KeypointEstimationFrames\"L\n\x14PoseEstimationResult\x12\x34\n\x0fposeEstimations\x18\x65 \x01(\x0b\x32\x1b.poses.PoseEstimationFrames\"k\n\x0f\x43\x61tegoryMoveDTO\x12\x0b\n\x03_id\x18\x01 \x01(\t\x12\x10\n\x08\x63\x61tegory\x18\x02 \x01(\t\x12\x0c\n\x04move\x18\x03 \x01(\t\x12\r\n\x05score\x18\x04 \x01(\x02\x12\x0e\n\x06losses\x18\x05 \x01(\x05\x12\x0c\n\x04wins\x18\x06 \x01(\x05\"+\n\x0cUserCoinsDTO\x12\x0c\n\x04user\x18\x01 \x01(\t\x12\r\n\x05\x63oins\x18\x02 \x01(\x05\"M\n\x1aUserCategoryContestListDTO\x12\x0b\n\x03_id\x18\x01 \x01(\t\x12\x10\n\x08\x63\x61tegory\x18\x02 \x01(\t\x12\x10\n\x08\x63ontests\x18\x03 \x03(\t\"Q\n\x17NextCategoryResponseDTO\x12\x36\n\x0b\x63ontestList\x18\x01 \x01(\x0b\x32!.poses.UserCategoryContestListDTO\"d\n\x16NextContestResponseDTO\x12\x16\n\x0enoMoreContests\x18\x01 \x01(\x08\x12\x32\n\x0buserContest\x18\x02 \x01(\x0b\x32\x1d.poses.UserCategoryContestDTO\"\x96\x01\n\x1e\x43\x61tegoryContestVoteResponseDTO\x12\x32\n\x0buserContest\x18\x01 \x01(\x0b\x32\x1d.poses.UserCategoryContestDTO\x12\x12\n\ncoinsAfter\x18\x02 \x01(\x05\x12,\n\x0cglobalScores\x18\x03 \x03(\x0b\x32\x16.poses.CategoryMoveDTO\"`\n\x12\x43\x61tegoryContestDTO\x12\x10\n\x08\x63\x61tegory\x18\x01 \x01(\t\x12\n\n\x02\x63\x31\x18\x02 \x01(\t\x12\n\n\x02\x63\x32\x18\x03 \x01(\t\x12\x0f\n\x07\x63\x31Votes\x18\x04 \x01(\x05\x12\x0f\n\x07\x63\x32Votes\x18\x05 \x01(\x05\"\x98\x01\n\x16UserCategoryContestDTO\x12\x0b\n\x03_id\x18\x01 \x01(\t\x12\x0c\n\x04user\x18\x02 \x01(\t\x12)\n\x0b\x63oinRewards\x18\x03 \x03(\x0b\x32\x14.poses.CoinRewardDTO\x12*\n\x07\x63ontest\x18\x04 \x01(\x0b\x32\x19.poses.CategoryContestDTO\x12\x0c\n\x04vote\x18\x05 \x01(\x05\"-\n\rCoinRewardDTO\x12\r\n\x05\x63oins\x18\x01 \x01(\x05\x12\r\n\x05state\x18\x02 \x01(\x05\"]\n\nMoveSetDTO\x12\x0b\n\x03_id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12$\n\x05moves\x18\x03 \x03(\x0b\x32\x15.poses.MoveSetMoveDTO\x12\x0e\n\x06length\x18\x04 \x01(\x02\"K\n\x0eMoveSetMoveDTO\x12\x0c\n\x04move\x18\x01 \x01(\t\x12+\n\x06timing\x18\x02 \x01(\x0b\x32\x1b.poses.MoveSetMoveTimingDTO\"Y\n\x14MoveSetMoveTimingDTO\x12\x0e\n\x06offset\x18\x01 \x01(\x02\x12\x0e\n\x06length\x18\x02 \x01(\x02\x12\x0f\n\x07\x62lendIn\x18\x03 \x01(\x02\x12\x10\n\x08\x62lendOut\x18\x04 \x01(\x02\"M\n\x07MoveDTO\x12\x32\n\x0ftransformCurves\x18\x01 \x03(\x0b\x32\x19.poses.TransformCurvesDTO\x12\x0e\n\x06length\x18\x02 \x01(\x02\"\x90\x01\n\x12TransformCurvesDTO\x12\x15\n\rtransformPath\x18\x01 \x01(\t\x12/\n\x0epositionCurves\x18\x02 \x01(\x0b\x32\x17.poses.Vector3CurvesDTO\x12\x32\n\x0erotationCurves\x18\x03 \x01(\x0b\x32\x1a.poses.QuaternionCurvesDTO\"o\n\x10Vector3CurvesDTO\x12\x1d\n\x01x\x18\x01 \x03(\x0b\x32\x12.poses.KeyframeDTO\x12\x1d\n\x01y\x18\x02 \x03(\x0b\x32\x12.poses.KeyframeDTO\x12\x1d\n\x01z\x18\x03 \x03(\x0b\x32\x12.poses.KeyframeDTO\"\x91\x01\n\x13QuaternionCurvesDTO\x12\x1d\n\x01x\x18\x01 \x03(\x0b\x32\x12.poses.KeyframeDTO\x12\x1d\n\x01y\x18\x02 \x03(\x0b\x32\x12.poses.KeyframeDTO\x12\x1d\n\x01z\x18\x03 \x03(\x0b\x32\x12.poses.KeyframeDTO\x12\x1d\n\x01w\x18\x04 \x03(\x0b\x32\x12.poses.KeyframeDTO\"i\n\x10TransformPoseDTO\x12\x15\n\rtransformPath\x18\x01 \x01(\t\x12\x1e\n\x03pos\x18\x02 \x01(\x0b\x32\x11.poses.Vector3DTO\x12\x1e\n\x03rot\x18\x03 \x01(\x0b\x32\x11.poses.Vector3DTO\"6\n\x07PoseDTO\x12+\n\ntransforms\x18\x01 \x03(\x0b\x32\x17.poses.TransformPoseDTO\"T\n\x11\x41nimatablePoseDTO\x12\x1d\n\x05\x62ones\x18\x01 \x01(\x0b\x32\x0e.poses.PoseDTO\x12 \n\x08\x63ontrols\x18\x02 \x01(\x0b\x32\x0e.poses.PoseDTO\"@\n\x11\x45\x64itorMovePoseDTO\x12\r\n\x05\x66rame\x18\x01 \x01(\x05\x12\x1c\n\x04pose\x18\x02 \x01(\x0b\x32\x0e.poses.PoseDTO\"A\n\x11\x45\x64itorMoveMetaDTO\x12\x17\n\x0f\x66ramesPerSecond\x18\x01 \x01(\x05\x12\x13\n\x0b\x66ramesTotal\x18\x02 \x01(\x05\"d\n\rEditorMoveDTO\x12*\n\x08metadata\x18\x01 \x01(\x0b\x32\x18.poses.EditorMoveMetaDTO\x12\'\n\x05poses\x18\x02 \x03(\x0b\x32\x18.poses.EditorMovePoseDTOB\x13\xaa\x02\x10Polaris.Protobufb\x06proto3'
+  serialized_pb=b'\n\x0bposes.proto\x12\x05poses\"-\n\nVector3DTO\x12\t\n\x01x\x18\x01 \x01(\x02\x12\t\n\x01y\x18\x02 \x01(\x02\x12\t\n\x01z\x18\x03 \x01(\x02\"Q\n\x0bKeyframeDTO\x12\x0c\n\x04time\x18\x01 \x01(\x02\x12\r\n\x05value\x18\x02 \x01(\x02\x12\x11\n\tinTangent\x18\x03 \x01(\x02\x12\x12\n\noutTangent\x18\x04 \x01(\x02\"A\n\x12KeypointEstimation\x12\t\n\x01x\x18\x65 \x01(\x02\x12\t\n\x01y\x18\x66 \x01(\x02\x12\t\n\x01z\x18g \x01(\x02\x12\n\n\x01p\x18\xc9\x01 \x01(\x02\"R\n\x18KeypointEstimationFrames\x12\n\n\x02id\x18\x65 \x01(\t\x12*\n\x06\x66rames\x18\xc9\x01 \x03(\x0b\x32\x19.poses.KeypointEstimation\"K\n\x14PoseEstimationFrames\x12\x33\n\tkeypoints\x18\xc9\x01 \x03(\x0b\x32\x1f.poses.KeypointEstimationFrames\"L\n\x14PoseEstimationResult\x12\x34\n\x0fposeEstimations\x18\x65 \x01(\x0b\x32\x1b.poses.PoseEstimationFrames\"M\n\x07MoveDTO\x12\x32\n\x0ftransformCurves\x18\x01 \x03(\x0b\x32\x19.poses.TransformCurvesDTO\x12\x0e\n\x06length\x18\x02 \x01(\x02\"\x90\x01\n\x12TransformCurvesDTO\x12\x15\n\rtransformPath\x18\x01 \x01(\t\x12/\n\x0epositionCurves\x18\x02 \x01(\x0b\x32\x17.poses.Vector3CurvesDTO\x12\x32\n\x0erotationCurves\x18\x03 \x01(\x0b\x32\x1a.poses.QuaternionCurvesDTO\"o\n\x10Vector3CurvesDTO\x12\x1d\n\x01x\x18\x01 \x03(\x0b\x32\x12.poses.KeyframeDTO\x12\x1d\n\x01y\x18\x02 \x03(\x0b\x32\x12.poses.KeyframeDTO\x12\x1d\n\x01z\x18\x03 \x03(\x0b\x32\x12.poses.KeyframeDTO\"\x91\x01\n\x13QuaternionCurvesDTO\x12\x1d\n\x01x\x18\x01 \x03(\x0b\x32\x12.poses.KeyframeDTO\x12\x1d\n\x01y\x18\x02 \x03(\x0b\x32\x12.poses.KeyframeDTO\x12\x1d\n\x01z\x18\x03 \x03(\x0b\x32\x12.poses.KeyframeDTO\x12\x1d\n\x01w\x18\x04 \x03(\x0b\x32\x12.poses.KeyframeDTO\"i\n\x10TransformPoseDTO\x12\x15\n\rtransformPath\x18\x01 \x01(\t\x12\x1e\n\x03pos\x18\x02 \x01(\x0b\x32\x11.poses.Vector3DTO\x12\x1e\n\x03rot\x18\x03 \x01(\x0b\x32\x11.poses.Vector3DTO\"6\n\x07PoseDTO\x12+\n\ntransforms\x18\x01 \x03(\x0b\x32\x17.poses.TransformPoseDTO\"T\n\x11\x41nimatablePoseDTO\x12\x1d\n\x05\x62ones\x18\x01 \x01(\x0b\x32\x0e.poses.PoseDTO\x12 \n\x08\x63ontrols\x18\x02 \x01(\x0b\x32\x0e.poses.PoseDTO\"@\n\x11\x45\x64itorMovePoseDTO\x12\r\n\x05\x66rame\x18\x01 \x01(\x05\x12\x1c\n\x04pose\x18\x02 \x01(\x0b\x32\x0e.poses.PoseDTO\"A\n\x11\x45\x64itorMoveMetaDTO\x12\x17\n\x0f\x66ramesPerSecond\x18\x01 \x01(\x05\x12\x13\n\x0b\x66ramesTotal\x18\x02 \x01(\x05\"d\n\rEditorMoveDTO\x12*\n\x08metadata\x18\x01 \x01(\x0b\x32\x18.poses.EditorMoveMetaDTO\x12\'\n\x05poses\x18\x02 \x03(\x0b\x32\x18.poses.EditorMovePoseDTOB\x13\xaa\x02\x10Polaris.Protobufb\x06proto3'
 )
 
 
@@ -273,567 +273,6 @@ _POSEESTIMATIONRESULT = _descriptor.Descriptor(
 )
 
 
-_CATEGORYMOVEDTO = _descriptor.Descriptor(
-  name='CategoryMoveDTO',
-  full_name='poses.CategoryMoveDTO',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='_id', full_name='poses.CategoryMoveDTO._id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='category', full_name='poses.CategoryMoveDTO.category', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='move', full_name='poses.CategoryMoveDTO.move', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='score', full_name='poses.CategoryMoveDTO.score', index=3,
-      number=4, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=float(0),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='losses', full_name='poses.CategoryMoveDTO.losses', index=4,
-      number=5, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='wins', full_name='poses.CategoryMoveDTO.wins', index=5,
-      number=6, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=458,
-  serialized_end=565,
-)
-
-
-_USERCOINSDTO = _descriptor.Descriptor(
-  name='UserCoinsDTO',
-  full_name='poses.UserCoinsDTO',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='user', full_name='poses.UserCoinsDTO.user', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='coins', full_name='poses.UserCoinsDTO.coins', index=1,
-      number=2, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=567,
-  serialized_end=610,
-)
-
-
-_USERCATEGORYCONTESTLISTDTO = _descriptor.Descriptor(
-  name='UserCategoryContestListDTO',
-  full_name='poses.UserCategoryContestListDTO',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='_id', full_name='poses.UserCategoryContestListDTO._id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='category', full_name='poses.UserCategoryContestListDTO.category', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='contests', full_name='poses.UserCategoryContestListDTO.contests', index=2,
-      number=3, type=9, cpp_type=9, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=612,
-  serialized_end=689,
-)
-
-
-_NEXTCATEGORYRESPONSEDTO = _descriptor.Descriptor(
-  name='NextCategoryResponseDTO',
-  full_name='poses.NextCategoryResponseDTO',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='contestList', full_name='poses.NextCategoryResponseDTO.contestList', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=691,
-  serialized_end=772,
-)
-
-
-_NEXTCONTESTRESPONSEDTO = _descriptor.Descriptor(
-  name='NextContestResponseDTO',
-  full_name='poses.NextContestResponseDTO',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='noMoreContests', full_name='poses.NextContestResponseDTO.noMoreContests', index=0,
-      number=1, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='userContest', full_name='poses.NextContestResponseDTO.userContest', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=774,
-  serialized_end=874,
-)
-
-
-_CATEGORYCONTESTVOTERESPONSEDTO = _descriptor.Descriptor(
-  name='CategoryContestVoteResponseDTO',
-  full_name='poses.CategoryContestVoteResponseDTO',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='userContest', full_name='poses.CategoryContestVoteResponseDTO.userContest', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='coinsAfter', full_name='poses.CategoryContestVoteResponseDTO.coinsAfter', index=1,
-      number=2, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='globalScores', full_name='poses.CategoryContestVoteResponseDTO.globalScores', index=2,
-      number=3, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=877,
-  serialized_end=1027,
-)
-
-
-_CATEGORYCONTESTDTO = _descriptor.Descriptor(
-  name='CategoryContestDTO',
-  full_name='poses.CategoryContestDTO',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='category', full_name='poses.CategoryContestDTO.category', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='c1', full_name='poses.CategoryContestDTO.c1', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='c2', full_name='poses.CategoryContestDTO.c2', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='c1Votes', full_name='poses.CategoryContestDTO.c1Votes', index=3,
-      number=4, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='c2Votes', full_name='poses.CategoryContestDTO.c2Votes', index=4,
-      number=5, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1029,
-  serialized_end=1125,
-)
-
-
-_USERCATEGORYCONTESTDTO = _descriptor.Descriptor(
-  name='UserCategoryContestDTO',
-  full_name='poses.UserCategoryContestDTO',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='_id', full_name='poses.UserCategoryContestDTO._id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='user', full_name='poses.UserCategoryContestDTO.user', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='coinRewards', full_name='poses.UserCategoryContestDTO.coinRewards', index=2,
-      number=3, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='contest', full_name='poses.UserCategoryContestDTO.contest', index=3,
-      number=4, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='vote', full_name='poses.UserCategoryContestDTO.vote', index=4,
-      number=5, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1128,
-  serialized_end=1280,
-)
-
-
-_COINREWARDDTO = _descriptor.Descriptor(
-  name='CoinRewardDTO',
-  full_name='poses.CoinRewardDTO',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='coins', full_name='poses.CoinRewardDTO.coins', index=0,
-      number=1, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='state', full_name='poses.CoinRewardDTO.state', index=1,
-      number=2, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1282,
-  serialized_end=1327,
-)
-
-
-_MOVESETDTO = _descriptor.Descriptor(
-  name='MoveSetDTO',
-  full_name='poses.MoveSetDTO',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='_id', full_name='poses.MoveSetDTO._id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='poses.MoveSetDTO.name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='moves', full_name='poses.MoveSetDTO.moves', index=2,
-      number=3, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='length', full_name='poses.MoveSetDTO.length', index=3,
-      number=4, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=float(0),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1329,
-  serialized_end=1422,
-)
-
-
-_MOVESETMOVEDTO = _descriptor.Descriptor(
-  name='MoveSetMoveDTO',
-  full_name='poses.MoveSetMoveDTO',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='move', full_name='poses.MoveSetMoveDTO.move', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='timing', full_name='poses.MoveSetMoveDTO.timing', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1424,
-  serialized_end=1499,
-)
-
-
-_MOVESETMOVETIMINGDTO = _descriptor.Descriptor(
-  name='MoveSetMoveTimingDTO',
-  full_name='poses.MoveSetMoveTimingDTO',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='offset', full_name='poses.MoveSetMoveTimingDTO.offset', index=0,
-      number=1, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=float(0),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='length', full_name='poses.MoveSetMoveTimingDTO.length', index=1,
-      number=2, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=float(0),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='blendIn', full_name='poses.MoveSetMoveTimingDTO.blendIn', index=2,
-      number=3, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=float(0),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='blendOut', full_name='poses.MoveSetMoveTimingDTO.blendOut', index=3,
-      number=4, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=float(0),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1501,
-  serialized_end=1590,
-)
-
-
 _MOVEDTO = _descriptor.Descriptor(
   name='MoveDTO',
   full_name='poses.MoveDTO',
@@ -867,8 +306,8 @@ _MOVEDTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1592,
-  serialized_end=1669,
+  serialized_start=458,
+  serialized_end=535,
 )
 
 
@@ -912,8 +351,8 @@ _TRANSFORMCURVESDTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1672,
-  serialized_end=1816,
+  serialized_start=538,
+  serialized_end=682,
 )
 
 
@@ -957,8 +396,8 @@ _VECTOR3CURVESDTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1818,
-  serialized_end=1929,
+  serialized_start=684,
+  serialized_end=795,
 )
 
 
@@ -1009,8 +448,8 @@ _QUATERNIONCURVESDTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1932,
-  serialized_end=2077,
+  serialized_start=798,
+  serialized_end=943,
 )
 
 
@@ -1054,8 +493,8 @@ _TRANSFORMPOSEDTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2079,
-  serialized_end=2184,
+  serialized_start=945,
+  serialized_end=1050,
 )
 
 
@@ -1085,8 +524,8 @@ _POSEDTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2186,
-  serialized_end=2240,
+  serialized_start=1052,
+  serialized_end=1106,
 )
 
 
@@ -1123,8 +562,8 @@ _ANIMATABLEPOSEDTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2242,
-  serialized_end=2326,
+  serialized_start=1108,
+  serialized_end=1192,
 )
 
 
@@ -1161,8 +600,8 @@ _EDITORMOVEPOSEDTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2328,
-  serialized_end=2392,
+  serialized_start=1194,
+  serialized_end=1258,
 )
 
 
@@ -1199,8 +638,8 @@ _EDITORMOVEMETADTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2394,
-  serialized_end=2459,
+  serialized_start=1260,
+  serialized_end=1325,
 )
 
 
@@ -1237,21 +676,13 @@ _EDITORMOVEDTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2461,
-  serialized_end=2561,
+  serialized_start=1327,
+  serialized_end=1427,
 )
 
 _KEYPOINTESTIMATIONFRAMES.fields_by_name['frames'].message_type = _KEYPOINTESTIMATION
 _POSEESTIMATIONFRAMES.fields_by_name['keypoints'].message_type = _KEYPOINTESTIMATIONFRAMES
 _POSEESTIMATIONRESULT.fields_by_name['poseEstimations'].message_type = _POSEESTIMATIONFRAMES
-_NEXTCATEGORYRESPONSEDTO.fields_by_name['contestList'].message_type = _USERCATEGORYCONTESTLISTDTO
-_NEXTCONTESTRESPONSEDTO.fields_by_name['userContest'].message_type = _USERCATEGORYCONTESTDTO
-_CATEGORYCONTESTVOTERESPONSEDTO.fields_by_name['userContest'].message_type = _USERCATEGORYCONTESTDTO
-_CATEGORYCONTESTVOTERESPONSEDTO.fields_by_name['globalScores'].message_type = _CATEGORYMOVEDTO
-_USERCATEGORYCONTESTDTO.fields_by_name['coinRewards'].message_type = _COINREWARDDTO
-_USERCATEGORYCONTESTDTO.fields_by_name['contest'].message_type = _CATEGORYCONTESTDTO
-_MOVESETDTO.fields_by_name['moves'].message_type = _MOVESETMOVEDTO
-_MOVESETMOVEDTO.fields_by_name['timing'].message_type = _MOVESETMOVETIMINGDTO
 _MOVEDTO.fields_by_name['transformCurves'].message_type = _TRANSFORMCURVESDTO
 _TRANSFORMCURVESDTO.fields_by_name['positionCurves'].message_type = _VECTOR3CURVESDTO
 _TRANSFORMCURVESDTO.fields_by_name['rotationCurves'].message_type = _QUATERNIONCURVESDTO
@@ -1276,18 +707,6 @@ DESCRIPTOR.message_types_by_name['KeypointEstimation'] = _KEYPOINTESTIMATION
 DESCRIPTOR.message_types_by_name['KeypointEstimationFrames'] = _KEYPOINTESTIMATIONFRAMES
 DESCRIPTOR.message_types_by_name['PoseEstimationFrames'] = _POSEESTIMATIONFRAMES
 DESCRIPTOR.message_types_by_name['PoseEstimationResult'] = _POSEESTIMATIONRESULT
-DESCRIPTOR.message_types_by_name['CategoryMoveDTO'] = _CATEGORYMOVEDTO
-DESCRIPTOR.message_types_by_name['UserCoinsDTO'] = _USERCOINSDTO
-DESCRIPTOR.message_types_by_name['UserCategoryContestListDTO'] = _USERCATEGORYCONTESTLISTDTO
-DESCRIPTOR.message_types_by_name['NextCategoryResponseDTO'] = _NEXTCATEGORYRESPONSEDTO
-DESCRIPTOR.message_types_by_name['NextContestResponseDTO'] = _NEXTCONTESTRESPONSEDTO
-DESCRIPTOR.message_types_by_name['CategoryContestVoteResponseDTO'] = _CATEGORYCONTESTVOTERESPONSEDTO
-DESCRIPTOR.message_types_by_name['CategoryContestDTO'] = _CATEGORYCONTESTDTO
-DESCRIPTOR.message_types_by_name['UserCategoryContestDTO'] = _USERCATEGORYCONTESTDTO
-DESCRIPTOR.message_types_by_name['CoinRewardDTO'] = _COINREWARDDTO
-DESCRIPTOR.message_types_by_name['MoveSetDTO'] = _MOVESETDTO
-DESCRIPTOR.message_types_by_name['MoveSetMoveDTO'] = _MOVESETMOVEDTO
-DESCRIPTOR.message_types_by_name['MoveSetMoveTimingDTO'] = _MOVESETMOVETIMINGDTO
 DESCRIPTOR.message_types_by_name['MoveDTO'] = _MOVEDTO
 DESCRIPTOR.message_types_by_name['TransformCurvesDTO'] = _TRANSFORMCURVESDTO
 DESCRIPTOR.message_types_by_name['Vector3CurvesDTO'] = _VECTOR3CURVESDTO
@@ -1341,90 +760,6 @@ PoseEstimationResult = _reflection.GeneratedProtocolMessageType('PoseEstimationR
   # @@protoc_insertion_point(class_scope:poses.PoseEstimationResult)
   })
 _sym_db.RegisterMessage(PoseEstimationResult)
-
-CategoryMoveDTO = _reflection.GeneratedProtocolMessageType('CategoryMoveDTO', (_message.Message,), {
-  'DESCRIPTOR' : _CATEGORYMOVEDTO,
-  '__module__' : 'poses_pb2'
-  # @@protoc_insertion_point(class_scope:poses.CategoryMoveDTO)
-  })
-_sym_db.RegisterMessage(CategoryMoveDTO)
-
-UserCoinsDTO = _reflection.GeneratedProtocolMessageType('UserCoinsDTO', (_message.Message,), {
-  'DESCRIPTOR' : _USERCOINSDTO,
-  '__module__' : 'poses_pb2'
-  # @@protoc_insertion_point(class_scope:poses.UserCoinsDTO)
-  })
-_sym_db.RegisterMessage(UserCoinsDTO)
-
-UserCategoryContestListDTO = _reflection.GeneratedProtocolMessageType('UserCategoryContestListDTO', (_message.Message,), {
-  'DESCRIPTOR' : _USERCATEGORYCONTESTLISTDTO,
-  '__module__' : 'poses_pb2'
-  # @@protoc_insertion_point(class_scope:poses.UserCategoryContestListDTO)
-  })
-_sym_db.RegisterMessage(UserCategoryContestListDTO)
-
-NextCategoryResponseDTO = _reflection.GeneratedProtocolMessageType('NextCategoryResponseDTO', (_message.Message,), {
-  'DESCRIPTOR' : _NEXTCATEGORYRESPONSEDTO,
-  '__module__' : 'poses_pb2'
-  # @@protoc_insertion_point(class_scope:poses.NextCategoryResponseDTO)
-  })
-_sym_db.RegisterMessage(NextCategoryResponseDTO)
-
-NextContestResponseDTO = _reflection.GeneratedProtocolMessageType('NextContestResponseDTO', (_message.Message,), {
-  'DESCRIPTOR' : _NEXTCONTESTRESPONSEDTO,
-  '__module__' : 'poses_pb2'
-  # @@protoc_insertion_point(class_scope:poses.NextContestResponseDTO)
-  })
-_sym_db.RegisterMessage(NextContestResponseDTO)
-
-CategoryContestVoteResponseDTO = _reflection.GeneratedProtocolMessageType('CategoryContestVoteResponseDTO', (_message.Message,), {
-  'DESCRIPTOR' : _CATEGORYCONTESTVOTERESPONSEDTO,
-  '__module__' : 'poses_pb2'
-  # @@protoc_insertion_point(class_scope:poses.CategoryContestVoteResponseDTO)
-  })
-_sym_db.RegisterMessage(CategoryContestVoteResponseDTO)
-
-CategoryContestDTO = _reflection.GeneratedProtocolMessageType('CategoryContestDTO', (_message.Message,), {
-  'DESCRIPTOR' : _CATEGORYCONTESTDTO,
-  '__module__' : 'poses_pb2'
-  # @@protoc_insertion_point(class_scope:poses.CategoryContestDTO)
-  })
-_sym_db.RegisterMessage(CategoryContestDTO)
-
-UserCategoryContestDTO = _reflection.GeneratedProtocolMessageType('UserCategoryContestDTO', (_message.Message,), {
-  'DESCRIPTOR' : _USERCATEGORYCONTESTDTO,
-  '__module__' : 'poses_pb2'
-  # @@protoc_insertion_point(class_scope:poses.UserCategoryContestDTO)
-  })
-_sym_db.RegisterMessage(UserCategoryContestDTO)
-
-CoinRewardDTO = _reflection.GeneratedProtocolMessageType('CoinRewardDTO', (_message.Message,), {
-  'DESCRIPTOR' : _COINREWARDDTO,
-  '__module__' : 'poses_pb2'
-  # @@protoc_insertion_point(class_scope:poses.CoinRewardDTO)
-  })
-_sym_db.RegisterMessage(CoinRewardDTO)
-
-MoveSetDTO = _reflection.GeneratedProtocolMessageType('MoveSetDTO', (_message.Message,), {
-  'DESCRIPTOR' : _MOVESETDTO,
-  '__module__' : 'poses_pb2'
-  # @@protoc_insertion_point(class_scope:poses.MoveSetDTO)
-  })
-_sym_db.RegisterMessage(MoveSetDTO)
-
-MoveSetMoveDTO = _reflection.GeneratedProtocolMessageType('MoveSetMoveDTO', (_message.Message,), {
-  'DESCRIPTOR' : _MOVESETMOVEDTO,
-  '__module__' : 'poses_pb2'
-  # @@protoc_insertion_point(class_scope:poses.MoveSetMoveDTO)
-  })
-_sym_db.RegisterMessage(MoveSetMoveDTO)
-
-MoveSetMoveTimingDTO = _reflection.GeneratedProtocolMessageType('MoveSetMoveTimingDTO', (_message.Message,), {
-  'DESCRIPTOR' : _MOVESETMOVETIMINGDTO,
-  '__module__' : 'poses_pb2'
-  # @@protoc_insertion_point(class_scope:poses.MoveSetMoveTimingDTO)
-  })
-_sym_db.RegisterMessage(MoveSetMoveTimingDTO)
 
 MoveDTO = _reflection.GeneratedProtocolMessageType('MoveDTO', (_message.Message,), {
   'DESCRIPTOR' : _MOVEDTO,
